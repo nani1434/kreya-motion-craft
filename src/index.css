@@ -2,39 +2,62 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Kreya Agency Design System - Cinematic & Modern */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Brand Colors */
+    --brand-orange: 14 87% 54%;  /* #e55729 */
+    --brand-grey: 0 2% 24%;      /* #3e3d3d */
+    --brand-white: 0 0% 100%;    /* #ffffff */
+    
+    /* Core Design Tokens */
+    --background: var(--brand-white);
+    --foreground: var(--brand-grey);
+    
+    --primary: var(--brand-orange);
+    --primary-foreground: var(--brand-white);
+    
+    --secondary: 0 0% 96%;
+    --secondary-foreground: var(--brand-grey);
+    
+    --accent: var(--brand-orange);
+    --accent-foreground: var(--brand-white);
+    
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 2% 45%;
+    
+    --card: var(--brand-white);
+    --card-foreground: var(--brand-grey);
+    
+    --popover: var(--brand-white);
+    --popover-foreground: var(--brand-grey);
+    
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: var(--brand-orange);
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: var(--brand-white);
+    
+    /* Custom Design Elements */
+    --dark-section: var(--brand-grey);
+    --dark-section-foreground: var(--brand-white);
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--brand-grey) / 0.9), hsl(var(--brand-grey) / 0.7));
+    --gradient-orange: linear-gradient(135deg, hsl(var(--brand-orange)), hsl(var(--brand-orange) / 0.8));
+    --gradient-card: linear-gradient(135deg, hsl(var(--brand-white)), hsl(0 0% 98%));
+    
+    /* Shadows & Effects */
+    --shadow-card: 0 4px 20px hsl(var(--brand-grey) / 0.1);
+    --shadow-orange-glow: 0 0 30px hsl(var(--brand-orange) / 0.3);
+    --shadow-elegant: 0 10px 40px hsl(var(--brand-grey) / 0.15);
+    
+    /* Animation Tokens */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    --transition-cinematic: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
 
     --radius: 0.5rem;
 
@@ -100,6 +123,103 @@ All colors MUST be HSL.
   }
 
   body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Hero Button Variants */
+  .btn-hero {
+    @apply bg-primary text-primary-foreground px-8 py-4 rounded-full font-semibold;
+    @apply hover:shadow-[var(--shadow-orange-glow)] transition-all duration-300;
+    @apply hover:scale-105 active:scale-95;
+  }
+  
+  .btn-outline-hero {
+    @apply border-2 border-primary text-primary px-8 py-4 rounded-full font-semibold;
+    @apply hover:bg-primary hover:text-primary-foreground transition-all duration-300;
+    @apply hover:shadow-[var(--shadow-orange-glow)];
+  }
+  
+  /* Section Variants */
+  .section-dark {
+    @apply bg-[hsl(var(--dark-section))] text-[hsl(var(--dark-section-foreground))];
+  }
+  
+  .section-light {
     @apply bg-background text-foreground;
+  }
+  
+  /* Card Variants */
+  .card-elevated {
+    @apply bg-card text-card-foreground rounded-2xl p-8;
+    @apply shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-elegant)];
+    @apply transition-all duration-300 hover:-translate-y-2;
+  }
+  
+  .card-service {
+    @apply card-elevated hover:border-primary/20 border border-transparent;
+    @apply group cursor-pointer;
+  }
+  
+  /* Animation Classes */
+  .animate-fade-up {
+    @apply opacity-0 translate-y-8 transition-all duration-700;
+  }
+  
+  .animate-fade-up.in-view {
+    @apply opacity-100 translate-y-0;
+  }
+  
+  .animate-scale-in {
+    @apply scale-95 opacity-0 transition-all duration-500;
+  }
+  
+  .animate-scale-in.in-view {
+    @apply scale-100 opacity-100;
+  }
+  
+  /* Magnetic Button Effect */
+  .magnetic-btn {
+    @apply transition-transform duration-200 ease-out;
+  }
+  
+  .magnetic-btn:hover {
+    transform: translateY(-2px);
+  }
+  
+  /* Orange Glow Text */
+  .text-glow {
+    text-shadow: 0 0 20px hsl(var(--brand-orange) / 0.5);
+  }
+  
+  /* Gradient Text */
+  .gradient-text {
+    background: linear-gradient(135deg, hsl(var(--brand-orange)), hsl(var(--brand-orange) / 0.7));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Custom Scrollbar */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: hsl(var(--brand-orange));
+    border-radius: 4px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--brand-orange) / 0.8);
   }
 }
