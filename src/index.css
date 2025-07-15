@@ -163,7 +163,7 @@
   
   .card-service {
     @apply card-elevated hover:border-primary/20 border border-transparent;
-    @apply group cursor-pointer;
+    @apply cursor-pointer;
   }
   
   /* Animation Classes */

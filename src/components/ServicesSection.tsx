@@ -78,7 +78,7 @@ const ServicesSection = () => {
           {services.map((service, index) => (
             <div
               key={service.title}
-              className={`card-service transition-all duration-700 ${
+              className={`card-service group transition-all duration-700 ${
                 isVisible ? 'animate-fade-up opacity-100' : 'opacity-0'
               }`}
               style={{ animationDelay: `${index * 150}ms` }}
