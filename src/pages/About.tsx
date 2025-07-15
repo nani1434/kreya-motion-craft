@@ -4,24 +4,31 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
 const About = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef<HTMLDivElement>(null);
+  const [heroVisible, setHeroVisible] = useState(false);
+  const [valuesVisible, setValuesVisible] = useState(false);
+  const valuesRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // Hero animation on mount
+    const timer = setTimeout(() => setHeroVisible(true), 300);
+    
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true);
+          setValuesVisible(true);
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.2 }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+    if (valuesRef.current) {
+      observer.observe(valuesRef.current);
     }
 
-    return () => observer.disconnect();
+    return () => {
+      clearTimeout(timer);
+      observer.disconnect();
+    };
   }, []);
 
   const values = [
@@ -82,11 +89,11 @@ const About = () => {
       <section className="pt-32 pb-20 section-dark">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center text-white">
-            <h1 className="text-6xl md:text-7xl font-bold mb-8 animate-fade-up">
+            <h1 className={`text-6xl md:text-7xl font-bold mb-8 fade-up ${heroVisible ? 'visible' : ''}`}>
               The <span className="gradient-text">Creators</span> Behind
               <br />Your Brand's Story
             </h1>
-            <p className="text-xl text-gray-300 mb-12 leading-relaxed animate-fade-up" style={{ animationDelay: '200ms' }}>
+            <p className={`text-xl text-gray-300 mb-12 leading-relaxed fade-up ${heroVisible ? 'visible' : ''}`} style={{ transitionDelay: '200ms' }}>
               We're a collective of passionate creatives, strategists, and innovators 
               dedicated to transforming brands through powerful storytelling and cutting-edge digital experiences.
             </p>
@@ -95,13 +102,13 @@ const About = () => {
       </section>
 
       {/* Values Section */}
-      <section ref={sectionRef} className="py-24 bg-background">
+      <section ref={valuesRef} className="py-24 bg-background">
         <div className="container mx-auto px-6">
           <div className="text-center mb-20">
-            <h2 className={`text-5xl font-bold mb-6 transition-all duration-1000 ${isVisible ? 'animate-fade-up opacity-100' : 'opacity-0'}`}>
+            <h2 className={`text-5xl font-bold mb-6 fade-up ${valuesVisible ? 'visible' : ''}`}>
               Our <span className="gradient-text">Values</span>
             </h2>
-            <p className={`text-xl text-muted-foreground max-w-3xl mx-auto transition-all duration-1000 delay-200 ${isVisible ? 'animate-fade-up opacity-100' : 'opacity-0'}`}>
+            <p className={`text-xl text-muted-foreground max-w-3xl mx-auto fade-up ${valuesVisible ? 'visible' : ''}`} style={{ transitionDelay: '200ms' }}>
               These core principles guide everything we do and shape how we approach every project.
             </p>
           </div>
@@ -110,10 +117,10 @@ const About = () => {
             {values.map((value, index) => (
               <div
                 key={value.title}
-                className={`text-center transition-all duration-700 ${
-                  isVisible ? 'animate-fade-up opacity-100' : 'opacity-0'
+                className={`text-center fade-up ${
+                  valuesVisible ? 'visible' : ''
                 }`}
-                style={{ animationDelay: `${index * 150}ms` }}
+                style={{ transitionDelay: `${(index + 2) * 150}ms` }}
               >
                 <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6 hover:bg-primary/20 transition-colors duration-300">
                   <value.icon className="w-10 h-10 text-primary" />

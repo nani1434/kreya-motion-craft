@@ -2,17 +2,19 @@ import { Video, Palette, Megaphone, TrendingUp, Code, Users } from "lucide-react
 import { useEffect, useRef, useState } from "react";
 
 const ServicesSection = () => {
-  const [isVisible, setIsVisible] = useState(false);
+  const [titleVisible, setTitleVisible] = useState(false);
+  const [cardsVisible, setCardsVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true);
+          setTitleVisible(true);
+          setTimeout(() => setCardsVisible(true), 300);
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.2 }
     );
 
     if (sectionRef.current) {
@@ -64,7 +66,7 @@ const ServicesSection = () => {
   return (
     <section id="expertise" ref={sectionRef} className="py-24 bg-background">
       <div className="container mx-auto px-6">
-        <div className={`text-center mb-20 transition-all duration-1000 ${isVisible ? 'animate-fade-up opacity-100' : 'opacity-0'}`}>
+        <div className={`text-center mb-20 fade-up ${titleVisible ? 'visible' : ''}`}>
           <h2 className="text-5xl md:text-6xl font-bold mb-6">
             Our <span className="gradient-text">Expertise</span>
           </h2>
@@ -78,10 +80,10 @@ const ServicesSection = () => {
           {services.map((service, index) => (
             <div
               key={service.title}
-              className={`card-service group transition-all duration-700 ${
-                isVisible ? 'animate-fade-up opacity-100' : 'opacity-0'
+              className={`card-service group fade-up ${
+                cardsVisible ? 'visible' : ''
               }`}
-              style={{ animationDelay: `${index * 150}ms` }}
+              style={{ transitionDelay: `${index * 150}ms` }}
             >
               <div className="mb-6">
                 <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors duration-300">

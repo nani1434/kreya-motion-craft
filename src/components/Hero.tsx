@@ -6,7 +6,8 @@ const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    setIsVisible(true);
+    const timer = setTimeout(() => setIsVisible(true), 300);
+    return () => clearTimeout(timer);
   }, []);
 
   const scrollToNextSection = () => {
@@ -24,7 +25,7 @@ const Hero = () => {
 
       {/* Content */}
       <div className="relative z-20 text-center text-white px-6 max-w-6xl mx-auto">
-        <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        <div className={`fade-up ${isVisible ? 'visible' : ''}`}>
           <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight">
             We Build{" "}
             <span className="gradient-text text-glow">Brands</span>
@@ -34,14 +35,14 @@ const Hero = () => {
           </h1>
         </div>
 
-        <div className={`transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        <div className={`fade-up ${isVisible ? 'visible' : ''}`} style={{ transitionDelay: '300ms' }}>
           <p className="text-xl md:text-2xl mb-12 text-gray-300 max-w-3xl mx-auto leading-relaxed">
             Cinematic storytelling meets strategic marketing. We create powerful brand experiences
             that captivate audiences and drive results.
           </p>
         </div>
 
-        <div className={`flex flex-col sm:flex-row gap-6 justify-center items-center transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        <div className={`flex flex-col sm:flex-row gap-6 justify-center items-center fade-up ${isVisible ? 'visible' : ''}`} style={{ transitionDelay: '500ms' }}>
           <Button className="btn-hero group flex items-center gap-3 text-lg px-10 py-6">
             <Play className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
             Watch Our Reel
@@ -52,7 +53,7 @@ const Hero = () => {
         </div>
 
         {/* Floating Stats */}
-        <div className={`grid grid-cols-3 gap-8 mt-20 transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        <div className={`grid grid-cols-3 gap-8 mt-20 fade-up ${isVisible ? 'visible' : ''}`} style={{ transitionDelay: '700ms' }}>
           <div className="text-center">
             <div className="text-4xl md:text-5xl font-bold text-primary mb-2">500+</div>
             <div className="text-gray-400">Projects Delivered</div>

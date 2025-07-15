@@ -5,24 +5,45 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 
 const Services = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef<HTMLDivElement>(null);
+  const [heroVisible, setHeroVisible] = useState(false);
+  const [servicesVisible, setServicesVisible] = useState(false);
+  const [processVisible, setProcessVisible] = useState(false);
+  
+  const servicesRef = useRef<HTMLDivElement>(null);
+  const processRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
+    // Hero animation on mount
+    const timer = setTimeout(() => setHeroVisible(true), 100);
+    
+    // Services section observer
+    const servicesObserver = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true);
+          setServicesVisible(true);
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.2 }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
+    // Process section observer
+    const processObserver = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setProcessVisible(true);
+        }
+      },
+      { threshold: 0.2 }
+    );
 
-    return () => observer.disconnect();
+    if (servicesRef.current) servicesObserver.observe(servicesRef.current);
+    if (processRef.current) processObserver.observe(processRef.current);
+
+    return () => {
+      clearTimeout(timer);
+      servicesObserver.disconnect();
+      processObserver.disconnect();
+    };
   }, []);
 
   const services = [
@@ -132,11 +153,12 @@ const Services = () => {
       <section className="pt-32 pb-20 section-dark">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center text-white">
-            <h1 className="text-6xl md:text-7xl font-bold mb-8 animate-fade-up">
+            <h1 className={`text-6xl md:text-7xl font-bold mb-8 fade-up ${heroVisible ? 'visible' : ''}`}>
               Services That <span className="gradient-text">Transform</span>
               <br />Your Brand
             </h1>
-            <p className="text-xl text-gray-300 mb-12 leading-relaxed animate-fade-up" style={{ animationDelay: '200ms' }}>
+            <p className={`text-xl text-gray-300 mb-12 leading-relaxed fade-up ${heroVisible ? 'visible' : ''}`} 
+               style={{ transitionDelay: '200ms' }}>
               From strategic planning to creative execution, we offer comprehensive solutions
               that drive growth and create lasting impact for your brand.
             </p>
@@ -145,16 +167,16 @@ const Services = () => {
       </section>
 
       {/* Services Grid */}
-      <section ref={sectionRef} className="py-24 bg-background">
+      <section ref={servicesRef} className="py-24 bg-background">
         <div className="container mx-auto px-6">
           <div className="space-y-24">
             {services.map((service, index) => (
               <div
                 key={service.title}
-                className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center transition-all duration-1000 ${
-                  isVisible ? 'animate-fade-up opacity-100' : 'opacity-0'
+                className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center fade-up ${
+                  servicesVisible ? 'visible' : ''
                 }`}
-                style={{ animationDelay: `${index * 200}ms` }}
+                style={{ transitionDelay: `${index * 200}ms` }}
               >
                 {/* Content */}
                 <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
@@ -205,20 +227,22 @@ const Services = () => {
       </section>
 
       {/* Process Section */}
-      <section className="py-24 section-dark">
+      <section ref={processRef} className="py-24 section-dark">
         <div className="container mx-auto px-6">
           <div className="text-center mb-20">
-            <h2 className="text-5xl font-bold mb-6 text-white">
+            <h2 className={`text-5xl font-bold mb-6 text-white fade-up ${processVisible ? 'visible' : ''}`}>
               Our <span className="gradient-text">Process</span>
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className={`text-xl text-gray-300 max-w-3xl mx-auto fade-up ${processVisible ? 'visible' : ''}`} 
+               style={{ transitionDelay: '200ms' }}>
               We follow a proven methodology that ensures exceptional results for every project.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
             {["Discover", "Strategy", "Create", "Execute", "Optimize"].map((step, index) => (
-              <div key={step} className="text-center">
+              <div key={step} className={`text-center fade-up ${processVisible ? 'visible' : ''}`} 
+                   style={{ transitionDelay: `${(index + 2) * 150}ms` }}>
                 <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-6 text-white font-bold text-xl">
                   {index + 1}
                 </div>
