@@ -107,9 +107,12 @@ const ServicesSection = () => {
               </ul>
 
               <div className="mt-8 pt-6 border-t border-border group-hover:border-primary/30 transition-colors duration-300">
-                <button className="text-primary font-semibold group-hover:underline transition-all duration-300">
+                <a 
+                  href={`/services/${service.title.toLowerCase().replace(' ', '-')}`} 
+                  className="text-primary font-semibold group-hover:underline transition-all duration-300"
+                >
                   Learn More →
-                </button>
+                </a>
               </div>
             </div>
           ))}

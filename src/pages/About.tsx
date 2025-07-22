@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Users, Target, Heart, Zap } from "lucide-react";
 import Navigation from "@/components/Navigation";
+import StorySection from "@/components/StorySection";
 import Footer from "@/components/Footer";
 
 const About = () => {
@@ -132,6 +133,9 @@ const About = () => {
           </div>
         </div>
       </section>
+
+      {/* Story Section */}
+      <StorySection />
 
       {/* Team Section */}
       <section className="py-24 section-dark">
