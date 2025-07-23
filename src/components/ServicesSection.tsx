@@ -34,31 +34,31 @@ const ServicesSection = () => {
     {
       icon: Palette,
       title: "Brand Identity",
-      description: "Complete brand ecosystems that speak to your audience and stand out.",
+      description: "We design logos, systems, and visuals that capture your story and create instant recognition.",
       features: ["Logo Design", "Visual Identity", "Brand Guidelines"]
     },
     {
       icon: Megaphone,
       title: "Digital Marketing",
-      description: "Data-driven campaigns that deliver measurable results and ROI.",
+      description: "We build data-driven campaigns that grow your brand and deliver ROI across digital platforms.",
       features: ["Social Media", "Content Strategy", "Campaign Management"]
     },
     {
       icon: TrendingUp,
       title: "Growth Strategy",
-      description: "Strategic consulting to scale your brand and accelerate growth.",
+      description: "We combine market insights with smart planning to fuel brand acceleration.",
       features: ["Market Analysis", "Growth Planning", "Performance Optimization"]
     },
     {
       icon: Code,
       title: "Web Development",
-      description: "High-performance websites that convert visitors into customers.",
+      description: "Custom websites that load fast, look stunning, and turn visitors into loyal customers.",
       features: ["Custom Development", "E-commerce", "Mobile Optimization"]
     },
     {
       icon: Users,
       title: "Influencer Marketing",
-      description: "Authentic partnerships that amplify your brand's reach and impact.",
+      description: "We connect you with the right creators to build trust and drive meaningful impact.",
       features: ["Influencer Partnerships", "Campaign Management", "Performance Tracking"]
     }
   ];
@@ -68,11 +68,10 @@ const ServicesSection = () => {
       <div className="container mx-auto px-6">
         <div className={`text-center mb-20 fade-up ${titleVisible ? 'visible' : ''}`}>
           <h2 className="text-5xl md:text-6xl font-bold mb-6">
-            Our <span className="gradient-text">Expertise</span>
+            Where Brands <span className="gradient-text">Come Alive </span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            We combine creative excellence with strategic thinking to deliver
-            exceptional results across all touchpoints of your brand.
+            From positioning to perception, we shape brand experiences that captivate, connect, and convert.
           </p>
         </div>
 
