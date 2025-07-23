@@ -14,6 +14,8 @@ import VideoProduction from "./pages/services/VideoProduction";
 import BrandIdentity from "./pages/services/BrandIdentity";
 import DigitalMarketing from "./pages/services/DigitalMarketing";
 import WebDevelopment from "./pages/services/WebDevelopment";
+import GrowthStrategy from "./pages/services/GrowthStrategy";
+import InfluencerMarketing from "./pages/services/InfluencerMarketing";
 
 const queryClient = new QueryClient();
 
@@ -34,6 +36,8 @@ const App = () => (
           <Route path="/services/brand-identity" element={<BrandIdentity />} />
           <Route path="/services/digital-marketing" element={<DigitalMarketing />} />
           <Route path="/services/web-development" element={<WebDevelopment />} />
+          <Route path="/services/growth-strategy" element={<GrowthStrategy />} />
+          <Route path="/services/influencer-marketing" element={<InfluencerMarketing />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
