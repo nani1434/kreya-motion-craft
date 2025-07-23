@@ -36,8 +36,15 @@ const Hero = () => {
   }, []);
 
   const scrollToNextSection = () => {
+    console.log("Scroll button clicked");
     const nextSection = document.getElementById("expertise");
-    nextSection?.scrollIntoView({ behavior: "smooth" });
+    console.log("Found section:", nextSection);
+    if (nextSection) {
+      nextSection.scrollIntoView({ behavior: "smooth" });
+      console.log("Scrolling to expertise section");
+    } else {
+      console.log("Section with id 'expertise' not found");
+    }
   };
 
   return (
