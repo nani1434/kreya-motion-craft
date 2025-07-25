@@ -54,29 +54,34 @@ const Hero = () => {
       <div className="absolute inset-0 z-0">
         {/* Primary background image with enhanced parallax */}
         <div 
-          className="absolute inset-0 bg-cover bg-center transition-all duration-700 ease-out"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-all duration-700 ease-out"
           style={{
             backgroundImage: `url(${heroBg})`,
-            transform: `translate(${mousePosition.x * 15}px, ${mousePosition.y * 15}px) scale(1.1) rotate(${mousePosition.x * 0.5}deg)`,
-            filter: `blur(${Math.abs(mousePosition.x) + Math.abs(mousePosition.y)}px)`,
+            backgroundPosition: 'center center',
+            backgroundSize: 'cover',
+            transform: `translate(${mousePosition.x * 8}px, ${mousePosition.y * 8}px) scale(1.05)`,
+            filter: `blur(${Math.abs(mousePosition.x + mousePosition.y) * 0.5}px) brightness(0.8)`,
           }}
         ></div>
         
-        {/* Layered gradient overlays */}
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-900/95 via-gray-800/85 to-gray-900/95 z-10"></div>
+        {/* Fallback gradient background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 z-5"></div>
+        
+        {/* Reduced opacity overlays for better image visibility */}
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-900/60 via-gray-800/40 to-gray-900/60 z-10"></div>
         <div 
-          className="absolute inset-0 bg-gradient-to-r from-primary/30 via-transparent to-secondary/30 z-20 transition-opacity duration-500"
+          className="absolute inset-0 bg-gradient-to-r from-primary/15 via-transparent to-secondary/15 z-20 transition-opacity duration-500"
           style={{
-            opacity: 0.3 + (Math.abs(mousePosition.x) + Math.abs(mousePosition.y)) * 0.2,
-            transform: `translate(${mousePosition.x * -5}px, ${mousePosition.y * -5}px)`,
+            opacity: 0.2 + (Math.abs(mousePosition.x) + Math.abs(mousePosition.y)) * 0.1,
+            transform: `translate(${mousePosition.x * -3}px, ${mousePosition.y * -3}px)`,
           }}
         ></div>
         
-        {/* Dynamic color shift overlay */}
+        {/* Subtle dynamic color shift overlay */}
         <div 
-          className="absolute inset-0 z-30 mix-blend-soft-light transition-all duration-1000"
+          className="absolute inset-0 z-30 mix-blend-overlay transition-all duration-1000"
           style={{
-            background: `radial-gradient(circle at ${50 + mousePosition.x * 20}% ${50 + mousePosition.y * 20}%, rgba(var(--primary), 0.3) 0%, transparent 50%)`,
+            background: `radial-gradient(circle at ${50 + mousePosition.x * 15}% ${50 + mousePosition.y * 15}%, rgba(var(--primary), 0.15) 0%, transparent 60%)`,
           }}
         ></div>
       </div>
