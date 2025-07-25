@@ -51,7 +51,7 @@ const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Interactive Background */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0">
         {/* Primary background image with enhanced parallax */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-all duration-700 ease-out"
@@ -59,35 +59,26 @@ const Hero = () => {
             backgroundImage: `url(${heroBg})`,
             backgroundPosition: 'center center',
             backgroundSize: 'cover',
-            transform: `translate(${mousePosition.x * 8}px, ${mousePosition.y * 8}px) scale(1.05)`,
-            filter: `blur(${Math.abs(mousePosition.x + mousePosition.y) * 0.5}px) brightness(0.8)`,
+            transform: `translate(${mousePosition.x * 5}px, ${mousePosition.y * 5}px) scale(1.02)`,
+            filter: `blur(${Math.abs(mousePosition.x + mousePosition.y) * 0.3}px) brightness(0.9)`,
           }}
         ></div>
         
-        {/* Fallback gradient background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 z-5"></div>
+        {/* Simplified overlay for better image visibility */}
+        <div className="absolute inset-0 bg-gradient-to-br from-background/40 via-background/20 to-background/40"></div>
         
-        {/* Reduced opacity overlays for better image visibility */}
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-900/60 via-gray-800/40 to-gray-900/60 z-10"></div>
+        {/* Interactive color overlay */}
         <div 
-          className="absolute inset-0 bg-gradient-to-r from-primary/15 via-transparent to-secondary/15 z-20 transition-opacity duration-500"
+          className="absolute inset-0 transition-opacity duration-500"
           style={{
-            opacity: 0.2 + (Math.abs(mousePosition.x) + Math.abs(mousePosition.y)) * 0.1,
-            transform: `translate(${mousePosition.x * -3}px, ${mousePosition.y * -3}px)`,
-          }}
-        ></div>
-        
-        {/* Subtle dynamic color shift overlay */}
-        <div 
-          className="absolute inset-0 z-30 mix-blend-overlay transition-all duration-1000"
-          style={{
-            background: `radial-gradient(circle at ${50 + mousePosition.x * 15}% ${50 + mousePosition.y * 15}%, rgba(var(--primary), 0.15) 0%, transparent 60%)`,
+            background: `radial-gradient(circle at ${50 + mousePosition.x * 10}% ${50 + mousePosition.y * 10}%, rgba(var(--primary), 0.1) 0%, transparent 50%)`,
+            opacity: 0.3 + (Math.abs(mousePosition.x) + Math.abs(mousePosition.y)) * 0.2,
           }}
         ></div>
       </div>
 
       {/* Enhanced Flying Elements */}
-      <div className="absolute inset-0 z-40 pointer-events-none">
+      <div className="absolute inset-0 z-10 pointer-events-none">
         {flyingElements.map((element) => {
           const icons = [Sparkles, Zap, Star];
           const IconComponent = icons[element.id % icons.length];
@@ -119,7 +110,7 @@ const Hero = () => {
 
       {/* Content */}
       <div 
-        className="relative z-50 text-center text-white px-6 max-w-6xl mx-auto transition-transform duration-300"
+        className="relative z-20 text-center text-white px-6 max-w-6xl mx-auto transition-transform duration-300"
         style={{
           transform: `translate(${mousePosition.x * -2}px, ${mousePosition.y * -2}px)`,
         }}
