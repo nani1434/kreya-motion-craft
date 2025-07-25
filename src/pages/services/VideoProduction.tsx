@@ -3,6 +3,7 @@ import { Video, Play, Camera, Film, Monitor, Palette } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
+import video_image from "../../images/Video_services.jpeg";
 
 const VideoProduction = () => {
   const [heroVisible, setHeroVisible] = useState(false);
@@ -98,15 +99,25 @@ const VideoProduction = () => {
       </section>
 
       {/* Services Grid */}
-      <section className="py-24 bg-background">
-        <div className="container mx-auto px-6">
-          <div className={`text-center mb-16 fade-up ${sectionsVisible ? 'visible' : ''}`}>
-            <h2 className="text-4xl font-bold mb-4">Our Video Services</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Comprehensive video production services tailored to your brand's unique needs.
-            </p>
+      <section className="px-24 pt-24 bg-background">
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <p className="text-lg font-bold">Bring Your Brand Story to Life</p>
+          <h2 className="text-4xl font-bold">Our Video Services</h2>
+            <p className="text-lg text-muted-foreground">
+            At Kreya Branding, we turn your ideas into powerful visual stories. Whether it's a product showcase, corporate video, or brand film — we craft high-quality content that captures attention and drives results.            </p>
           </div>
-
+          <div>
+                  <img
+                    src={video_image}
+                    alt="Our Video Services"
+                    className="w-full h-100 object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+            </div>
+          </div>
+        </section>
+          <section className="py-24 bg-background">
+          <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {services.map((service, index) => (
               <div
