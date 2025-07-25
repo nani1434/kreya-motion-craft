@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Play, ArrowDown, Sparkles, Zap, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import heroBg from "@/assets/hero-bg.jpg";
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -49,44 +50,75 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Dynamic Background */}
+      {/* Interactive Background */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-900/90 via-gray-800/80 to-gray-900/90 z-10"></div>
+        {/* Primary background image with enhanced parallax */}
         <div 
-          className="w-full h-full bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 bg-cover bg-center transition-transform duration-700 ease-out"
+          className="absolute inset-0 bg-cover bg-center transition-all duration-700 ease-out"
           style={{
-            transform: `translate(${mousePosition.x * 10}px, ${mousePosition.y * 10}px) scale(1.05)`,
+            backgroundImage: `url(${heroBg})`,
+            transform: `translate(${mousePosition.x * 15}px, ${mousePosition.y * 15}px) scale(1.1) rotate(${mousePosition.x * 0.5}deg)`,
+            filter: `blur(${Math.abs(mousePosition.x) + Math.abs(mousePosition.y)}px)`,
           }}
         ></div>
         
-        {/* Animated gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-transparent to-secondary/20 animate-pulse"></div>
+        {/* Layered gradient overlays */}
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-900/95 via-gray-800/85 to-gray-900/95 z-10"></div>
+        <div 
+          className="absolute inset-0 bg-gradient-to-r from-primary/30 via-transparent to-secondary/30 z-20 transition-opacity duration-500"
+          style={{
+            opacity: 0.3 + (Math.abs(mousePosition.x) + Math.abs(mousePosition.y)) * 0.2,
+            transform: `translate(${mousePosition.x * -5}px, ${mousePosition.y * -5}px)`,
+          }}
+        ></div>
+        
+        {/* Dynamic color shift overlay */}
+        <div 
+          className="absolute inset-0 z-30 mix-blend-soft-light transition-all duration-1000"
+          style={{
+            background: `radial-gradient(circle at ${50 + mousePosition.x * 20}% ${50 + mousePosition.y * 20}%, rgba(var(--primary), 0.3) 0%, transparent 50%)`,
+          }}
+        ></div>
       </div>
 
-      {/* Flying Elements */}
-      <div className="absolute inset-0 z-10 pointer-events-none">
+      {/* Enhanced Flying Elements */}
+      <div className="absolute inset-0 z-40 pointer-events-none">
         {flyingElements.map((element) => {
           const icons = [Sparkles, Zap, Star];
           const IconComponent = icons[element.id % icons.length];
+          const depth = element.id % 3 + 1;
+          const intensity = Math.abs(mousePosition.x) + Math.abs(mousePosition.y);
+          
           return (
             <div
               key={element.id}
-              className="absolute animate-float opacity-20 hover:opacity-40 transition-opacity duration-300"
+              className="absolute animate-float transition-all duration-500"
               style={{
                 left: `${element.x}%`,
                 top: `${element.y}%`,
                 animationDelay: `${element.delay}ms`,
-                transform: `translate(${mousePosition.x * (element.id % 3 + 1) * 5}px, ${mousePosition.y * (element.id % 3 + 1) * 5}px)`,
+                transform: `translate(${mousePosition.x * depth * 8}px, ${mousePosition.y * depth * 8}px) rotate(${mousePosition.x * depth * 10}deg) scale(${1 + intensity * 0.3})`,
+                opacity: 0.2 + intensity * 0.3,
               }}
             >
-              <IconComponent className="w-6 h-6 text-primary" />
+              <IconComponent 
+                className="w-6 h-6 text-primary transition-all duration-300" 
+                style={{
+                  filter: `drop-shadow(0 0 ${intensity * 10}px rgb(var(--primary)))`
+                }}
+              />
             </div>
           );
         })}
       </div>
 
       {/* Content */}
-      <div className="relative z-20 text-center text-white px-6 max-w-6xl mx-auto">
+      <div 
+        className="relative z-50 text-center text-white px-6 max-w-6xl mx-auto transition-transform duration-300"
+        style={{
+          transform: `translate(${mousePosition.x * -2}px, ${mousePosition.y * -2}px)`,
+        }}
+      >
         <div className={`fade-up ${isVisible ? 'visible' : ''}`}>
           <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight">
             We Build{" "}
