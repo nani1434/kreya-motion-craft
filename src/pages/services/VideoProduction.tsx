@@ -83,6 +83,56 @@ const VideoProduction = () => {
     }
   ];
 
+  const kreya = [
+    {
+      title: "Creative Edge",
+      description: "At Kreya, we combine innovative ideas with strong storytelling to create videos that captivate and connect with your audience.",
+      thumbnail: video_image,
+    },
+    {
+      title: "Top-Tier Quality",
+      description: "From sharp visuals to crisp audio and seamless editing, we use the best tools and talent to deliver high-quality production every time.",
+      thumbnail: video_image,
+    },
+    {
+      title: "Collaborative Process",
+      description: "Your vision matters. We work closely with you at every step — from initial brief to the final cut — ensuring the outcome reflects your goals.",
+      thumbnail: video_image,
+    },
+        {
+      title: "Results-Driven",
+      description: "Our videos don’t just look great — they’re built to deliver real results, from boosting engagement to driving conversions.",
+      thumbnail: video_image,
+    }
+  ];
+
+  const img_sect = [
+    {
+      title: "Creative ",
+      title_col: "Edge",
+      description: "At Kreya, we combine innovative ideas with strong storytelling to create videos that captivate and connect with your audience.",
+      thumbnail: video_image,
+    },
+    {
+      title: "Top-Tier ",
+      title_col: "Quality",
+      description: "From sharp visuals to crisp audio and seamless editing, we use the best tools and talent to deliver high-quality production every time.",
+      thumbnail: video_image,
+    },
+    {
+      title: "Collaborative ",
+      title_col: "Process",
+      description: "Your vision matters. We work closely with you at every step — from initial brief to the final cut — ensuring the outcome reflects your goals.",
+      thumbnail: video_image,
+    },
+        {
+      title: "Results-",
+      title_col: "Driven",
+      description: "Our videos don’t just look great — they’re built to deliver real results, from boosting engagement to driving conversions.",
+      thumbnail: video_image,
+    }
+  ]
+
   return (
     <div className="min-h-screen">
       <Navigation />
@@ -119,10 +169,12 @@ const VideoProduction = () => {
         <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
             <p className="text-lg font-bold">Bring Your Brand Story to Life</p>
-            <h2 className="text-4xl font-bold">Our <span className="gradient-text">Video</span> Services</h2>
-            <p className="text-lg text-muted-foreground">
-            At Kreya Branding, we turn your ideas into impactful visual stories through expert video production. Whether it’s a product showcase, corporate video, brand film, or social media content, we bring your vision to life with high-quality visuals, clear messaging, and purpose-driven storytelling.
-Our end-to-end video production services cover everything from scripting and storyboarding to shooting, editing, and post-production. We focus on creating content that not only looks stunning but also aligns with your brand strategy and drives real engagement. With every video, we aim to inform, inspire, and convert — helping your brand stand out and connect with your audience meaningfully.
+            <h2 className="text-4xl font-bold pb-4">Our <span className="gradient-text">Video</span> Services</h2>
+            <p className="text-lg text-muted-foreground indent-8">
+              At Kreya Branding, we turn your ideas into impactful visual stories through expert video production. Whether it’s a product showcase, corporate video, brand film, or social media content, we bring your vision to life with high-quality visuals, clear messaging, and purpose-driven storytelling.
+            </p>
+            <p className="text-lg text-muted-foreground indent-8">
+              Our end-to-end video production services cover everything from scripting and storyboarding to shooting, editing, and post-production. We focus on creating content that not only looks stunning but also aligns with your brand strategy and drives real engagement. With every video, we aim to inform, inspire, and convert — helping your brand stand out and connect with your audience meaningfully.
             </p>
           </div>
           <div>
@@ -135,78 +187,43 @@ Our end-to-end video production services cover everything from scripting and sto
         </div>
       </section>
 
-      {/* Why Video Matters for Your Brand Section */}
-      <section className="px-24 pt-24 bg-background">
-        <div className="container mx-auto grid grid-cols-1 md:grid-cols-5 gap-8">
-        <div className="md:col-span-2">
-            <img
-              src={video_image}
-              alt="Our Video Services"
-              className="w-full h-100 object-cover group-hover:scale-110 transition-transform duration-500"
-            />
-          </div>
-          <div className="md:col-span-3">
-            <h2 className="text-4xl font-bold">Boosts <span className="gradient-text">Engagement</span></h2>
-            <p className="text-lg text-muted-foreground">
-              Videos naturally invite interaction. Whether it’s likes, comments, or shares, video content generates more engagement across platforms—helping your brand reach wider audiences and build stronger connections with viewers.            
-            </p>
-          </div>
-        </div>
-      </section>
 
+      {/* image content section */}
+      {img_sect.map((simg, index) => (
       <section className="px-24 pt-24 bg-background">
         <div className="container mx-auto grid grid-cols-1 md:grid-cols-5 gap-8">
-        <div className="md:col-span-3">
-            <h2 className="text-4xl font-bold">Improves <span className="gradient-text">Conversion</span></h2>
-            <p className="text-lg text-muted-foreground">
-              Video has a proven impact on business performance. From product demos to customer testimonials, compelling video content can influence buying decisions, drive more inquiries, and increase conversion rates significantly.
-            </p>
-        </div>
-        <div className="md:col-span-2">
-            <img
-              src={video_image}
-              alt="Our Video Services"
-              className="w-full h-100 object-cover group-hover:scale-110 transition-transform duration-500"
-            />
-          </div>
-        </div>
-      </section>
-
-      <section className="px-24 pt-24 bg-background">
-        <div className="container mx-auto grid grid-cols-1 md:grid-cols-5 gap-8">
-        <div className="md:col-span-2">
-            <img
-              src={video_image}
-              alt="Our Video Services"
-              className="w-full h-100 object-cover group-hover:scale-110 transition-transform duration-500"
-            />
-          </div>
-          <div className="md:col-span-3">
-            <h2 className="text-4xl font-bold">SEO-<span className="gradient-text">Friendly</span></h2>
-            <p className="text-lg text-muted-foreground">
-              Search engines prioritize video-rich websites. Adding video not only improves your site's engagement metrics like time-on-page, but also increases the chance of ranking higher in search results, bringing more organic traffic.            
-            </p>
-          </div>
+          {index % 2 !== 0 ? (
+          <>
+            <div className="md:col-span-3">
+              <h2 className="text-4xl font-bold">{simg.title}<span className="gradient-text">{simg.title_col}</span></h2>
+              <p className="text-lg text-muted-foreground">{simg.description}</p>
+            </div>
+            <div className="md:col-span-2">
+              <img
+                src={simg.thumbnail}
+                alt="Our Video Services"
+                className="w-full h-100 object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+            </div>
+          </>
+          ) : (
+          <>
+            <div className="md:col-span-2">
+              <img
+                src={simg.thumbnail}
+                alt="Our Video Services"
+                className="w-full h-100 object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+            </div>
+            <div className="md:col-span-3">
+              <h2 className="text-4xl font-bold">{simg.title} <span className="gradient-text">{simg.title_col}</span></h2>
+              <p className="text-lg text-muted-foreground">{simg.description}</p>
+            </div>
+          </>
+          )}
         </div>
       </section>
-
-      <section className="px-24 pt-24 bg-background">
-        <div className="container mx-auto grid grid-cols-1 md:grid-cols-5 gap-8">
-        <div className="md:col-span-3">
-            <h2 className="text-4xl font-bold">Strengthens <span className="gradient-text">Identity</span></h2>
-            <p className="text-lg text-muted-foreground">
-              Well-crafted video content tells a story—your brand story. These narratives create emotional impact and are easier to remember, helping your brand stay top-of-mind long after the video ends.
-            </p>
-        </div>
-        <div className="md:col-span-2">
-            <img
-              src={video_image}
-              alt="Our Video Services"
-              className="w-full h-100 object-cover group-hover:scale-110 transition-transform duration-500"
-            />
-          </div>
-        </div>
-      </section>
+      ))}
 
       <section className="py-24 bg-background">
           <div className="container mx-auto px-6">
@@ -238,7 +255,41 @@ Our end-to-end video production services cover everything from scripting and sto
         </div>
       </section>
 
-      {/* ---Why Video Matters for Your Brand Section ends---*/}
+      {/* ---image content Section ends---*/}
+
+
+      {/* why chose kreya */}
+
+      <section className="pb-24">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4">Why Chose Kreya?</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Our professional services help businesses strengthen their brand identity and strategy.
+            </p>
+          </div>
+
+          {/* Grid for the boxes */}
+          <div className="grid md:grid-cols-2 gap-8">  
+            {kreya.map((kbox, index) => (
+            <div className="section-dark p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow flex items-center space-x-6">
+              <div className="flex-shrink-0">
+                <img 
+                  src={kbox.thumbnail} 
+                  alt="Our Video Services"
+                  className="w-[80px] h-[80px] object-contain"
+                />
+              </div>  
+              <div>
+                <h3 className="text-xl font-bold text-white">{kbox.title}</h3>
+                <p className="text-gray-400 mt-2">{kbox.description}</p>
+              </div>
+            </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
 
       {/* Portfolio Section */}
       <section className="py-24 section-dark">

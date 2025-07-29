@@ -3,6 +3,7 @@ import { Palette, Pen, Layout, Package, Eye, FileText } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
+import video_image from "../../images/Video_services.jpeg";
 
 const BrandIdentity = () => {
   const [heroVisible, setHeroVisible] = useState(false);
@@ -21,27 +22,43 @@ const BrandIdentity = () => {
   const services = [
     {
       icon: Pen,
-      title: "Logo Design",
-      description: "Distinctive logos that represent your brand's essence",
-      features: ["Custom Logo Creation", "Brand Mark Design", "Logo Variations"]
-    },
-    {
-      icon: Eye,
-      title: "Visual Identity",
-      description: "Comprehensive visual systems that ensure consistency",
-      features: ["Color Palettes", "Typography Systems", "Visual Elements"]
-    },
-    {
-      icon: FileText,
-      title: "Brand Guidelines",
-      description: "Detailed documentation for brand consistency",
-      features: ["Usage Guidelines", "Brand Standards", "Asset Libraries"]
+      title: "Brand Strategy",
+      // description: "Professional commercials that drive brand awareness and sales",
+      features: ["Analyze your market, audience, and competition", 
+                  "Define your brand positioning and core values", 
+                  "Build a strategic roadmap for long-term growth"]
     },
     {
       icon: Package,
-      title: "Brand Applications",
-      description: "Real-world applications of your brand identity",
-      features: ["Business Cards", "Letterheads", "Marketing Materials"]
+      title: "Visual Identity Design",
+      // description: "Engaging content optimized for social media platforms",
+      features: ["Design memorable logos and brand marks", 
+                "Create cohesive color palettes and typography", 
+                "Develop a consistent visual language across all media"]
+    },
+    {
+      icon: Eye,
+      title: "Brand Messaging & Storytelling",
+      // description: "Professional content for internal and external communications",
+      features: ["Define your brand voice and tone of communication", 
+                 "Craft impactful taglines, headlines, and messaging", 
+                 "Build authentic stories that connect emotionally"]
+    },
+    {
+      icon: FileText,
+      title: "Brand Collateral Design",
+      // description: "Custom animations that bring your ideas to life",
+      features: ["Design business cards, brochures, and stationery", 
+                 "Create packaging that reflects your brand identity", 
+                 "Ensure consistency across all printed and digital materials"]
+    },
+    {
+      icon: FileText,
+      title: "Digital Branding",
+      // description: "Custom animations that bring your ideas to life",
+      features: ["Design engaging and responsive websites", 
+                 "Create branded content for social platforms", 
+                 "Enhance digital presence through cohesive design and messaging"]
     }
   ];
 
@@ -72,6 +89,56 @@ const BrandIdentity = () => {
       description: "Final brand package with comprehensive guidelines"
     }
   ];
+
+  const kreya = [
+    {
+      title: "Strategic Thinking",
+      description: "At Kreya, we begin every brand identity project with a clear strategy. We take the time to understand your business, goals, and audience to ensure your brand is rooted in purpose and built to grow.",
+      thumbnail: video_image,
+    },
+    {
+      title: "Distinct Visual Identity",
+      description: "We create visuals that not only look good but leave a lasting impression. From logos to color palettes and typography, every element is carefully designed to make your brand stand out.",
+      thumbnail: video_image,
+    },
+    {
+      title: "Clear Brand Messaging",
+      description: "Your brand’s voice matters. We help you define how your brand sounds and communicates, so your message connects with your audience clearly and consistently across all platforms.",
+      thumbnail: video_image,
+    },
+        {
+      title: "Complete Branding Support",
+      description: "From the first idea to the final rollout, we offer full support. Whether you need brand guidelines, packaging, or digital branding, we ensure everything works together to tell your story effectively.",
+      thumbnail: video_image,
+    }
+  ];
+
+    const img_sect = [
+    {
+      title: "Stand ",
+      title_col: "Out",
+      description: "In today’s saturated market, consumers are bombarded with countless choices. A strong brand identity helps you cut through the noise and be instantly recognizable. By establishing a clear voice, tone, and visual style, your brand can create a distinct presence that not only captures attention but also stays top-of-mind with your audience.",
+      thumbnail: video_image,
+    },
+    {
+      title: "Build",
+      title_col: "Trust",
+      description: "From sharp visuals to crisp audio and seamless editing, we use the best tools and talent to deliver high-quality production every time.",
+      thumbnail: video_image,
+    },
+    {
+      title: "Inspire ",
+      title_col: "Loyalty",
+      description: "Great brands don’t just sell products—they build relationships. When your brand reflects values, emotions, or aspirations your audience relates to, it creates a deeper connection. This emotional resonance fosters loyalty, encouraging customers to return, recommend, and advocate for your brand over time.",
+      thumbnail: video_image,
+    },
+        {
+      title: "Show Your ",
+      title_col: "Value",
+      description: "Your brand should clearly articulate what makes you different—and better. Whether it’s innovation, quality, service, or experience, your brand must highlight the unique value you bring to the table. Strong branding ensures this message is consistently communicated, helping customers understand why they should choose you over competitors.",
+      thumbnail: video_image,
+    }
+  ]
 
   return (
     <div className="min-h-screen">
@@ -105,15 +172,66 @@ const BrandIdentity = () => {
       </section>
 
       {/* Services Grid */}
-      <section className="py-24 bg-background">
-        <div className="container mx-auto px-6">
-          <div className={`text-center mb-16 fade-up ${sectionsVisible ? 'visible' : ''}`}>
-            <h2 className="text-4xl font-bold mb-4">Brand Identity Services</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Complete brand identity solutions from logo design to comprehensive brand guidelines.
+      <section className="px-24 pt-24 bg-background">
+        <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div>
+            <p className="text-lg font-bold">Bring Your Brand Story to Life</p>
+            <h2 className="text-4xl font-bold pb-4"> <span className="gradient-text">Brand</span> Identity</h2>
+            <p className="text-lg text-muted-foreground indent-8">
+              At Kreya Branding, we believe that a brand is more than just a logo or a color palette — it’s the essence of a business and the way it connects with its audience. We work closely with businesses to craft meaningful brand strategies that define their voice, values, and unique positioning in the market. Our goal is to build brands that are not only visually striking but also rooted in purpose and clarity. </p>
+            <p className="text-lg text-muted-foreground indent-8">Our process combines strategic thinking with creative excellence. From brand discovery and market research to naming, messaging, and visual identity design, we ensure every touchpoint reflects a consistent and compelling brand story. Whether launching a new brand or refreshing an existing one, we help businesses make a lasting impression that fosters loyalty and trust.</p>
+            <p className="text-lg text-muted-foreground indent-8">At the heart of our work is a deep understanding of people — what they value, how they think, and what drives them to connect. That’s why our branding solutions are built to resonate emotionally, engage meaningfully, and grow sustainably in today’s competitive landscape.
             </p>
           </div>
+          <div>
+            <img
+              src={video_image}
+              alt="Our Video Services"
+              className="w-full h-100 object-cover group-hover:scale-110 transition-transform duration-500"
+            />
+          </div>
+        </div>
+      </section>
 
+      {/* image content section */}
+      {img_sect.map((simg, index) => (
+      <section className="px-24 pt-24 bg-background">
+        <div className="container mx-auto grid grid-cols-1 md:grid-cols-5 gap-8">
+          {index % 2 !== 0 ? (
+          <>
+            <div className="md:col-span-3">
+              <h2 className="text-4xl font-bold">{simg.title}<span className="gradient-text">{simg.title_col}</span></h2>
+              <p className="text-lg text-muted-foreground">{simg.description}</p>
+            </div>
+            <div className="md:col-span-2">
+              <img
+                src={simg.thumbnail}
+                alt="Our Video Services"
+                className="w-full h-100 object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+            </div>
+          </>
+          ) : (
+          <>
+            <div className="md:col-span-2">
+              <img
+                src={simg.thumbnail}
+                alt="Our Video Services"
+                className="w-full h-100 object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+            </div>
+            <div className="md:col-span-3">
+              <h2 className="text-4xl font-bold">{simg.title} <span className="gradient-text">{simg.title_col}</span></h2>
+              <p className="text-lg text-muted-foreground">{simg.description}</p>
+            </div>
+          </>
+          )}
+        </div>
+      </section>
+      ))}
+
+      <section className="py-24 bg-background">
+          <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {services.map((service, index) => (
               <div
@@ -127,8 +245,8 @@ const BrandIdentity = () => {
                   </div>
                   <h3 className="text-2xl font-bold">{service.title}</h3>
                 </div>
-                <p className="text-muted-foreground mb-6">{service.description}</p>
-                <ul className="space-y-2">
+                {/* <p className="text-muted-foreground mb-6">{service.description}</p> */}
+                <ul className="space-y-2 mx-1">
                   {service.features.map((feature, idx) => (
                     <li key={idx} className="flex items-center text-sm text-muted-foreground">
                       <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
@@ -141,6 +259,40 @@ const BrandIdentity = () => {
           </div>
         </div>
       </section>
+      {/* Why Video Matters for Your Brand Section ends*/}
+
+     {/* why chose kreya */}
+
+      <section className="pb-24">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4">Why Chose Kreya?</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Our professional services help businesses strengthen their brand identity and strategy.
+            </p>
+          </div>
+
+          {/* Grid for the boxes */}
+          <div className="grid md:grid-cols-2 gap-8">  
+            {kreya.map((kbox, index) => (
+            <div className="section-dark p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow flex items-center space-x-6">
+              <div className="flex-shrink-0">
+                <img 
+                  src={kbox.thumbnail} 
+                  alt="Our Video Services"
+                  className="w-[80px] h-[80px] object-contain"
+                />
+              </div>  
+              <div>
+                <h3 className="text-xl font-bold text-white">{kbox.title}</h3>
+                <p className="text-gray-400 mt-2">{kbox.description}</p>
+              </div>
+            </div>
+            ))}
+          </div>
+        </div>
+      </section>
+     {/* why chose kreya ends*/}
 
       {/* Process Section */}
       <section className="py-24 section-dark">

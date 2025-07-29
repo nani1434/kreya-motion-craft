@@ -3,6 +3,7 @@ import { Megaphone, Target, BarChart, TrendingUp, Users, Zap } from "lucide-reac
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
+import video_image from "../../images/Video_services.jpeg";
 
 const DigitalMarketing = () => {
   const [heroVisible, setHeroVisible] = useState(false);
@@ -21,27 +22,67 @@ const DigitalMarketing = () => {
   const services = [
     {
       icon: Users,
-      title: "Social Media Marketing",
-      description: "Engaging content and strategic campaigns across all platforms",
-      features: ["Content Creation", "Community Management", "Paid Social Campaigns"]
+      title: "Audience Targeting",
+      // description: "Professional commercials that drive brand awareness and sales",
+      features: ["Reach the right people using behavior & interest-based data", 
+                  "Tailored messaging for specific customer segments", 
+                  "Increase relevance and reduce wasted ad spend"]
     },
     {
       icon: Target,
-      title: "Paid Advertising",
-      description: "ROI-focused advertising campaigns that drive conversions",
-      features: ["Google Ads", "Facebook & Instagram Ads", "LinkedIn Campaigns"]
+      title: "Brand Visibility",
+      // description: "Engaging content optimized for social media platforms",
+      features: ["Boost presence across search engines and social platforms", 
+                "Consistent branding across all digital touchpoints", 
+                "Stay top-of-mind with your target audience"]
     },
     {
       icon: BarChart,
-      title: "Analytics & Reporting",
-      description: "Data-driven insights to optimize your marketing performance",
-      features: ["Performance Tracking", "Custom Dashboards", "ROI Analysis"]
+      title: "Cross-Platform Engagement",
+      // description: "Professional content for internal and external communications",
+      features: ["Connect with users on web, mobile, and social", 
+                 "Unified brand experience across all channels", 
+                 "Drive interaction through multi-channel content"]
     },
     {
       icon: Zap,
-      title: "Marketing Automation",
-      description: "Streamlined workflows that nurture leads and drive sales",
-      features: ["Email Automation", "Lead Scoring", "Customer Journey Mapping"]
+      title: "Performance Analytics",
+      // description: "Custom animations that bring your ideas to life",
+      features: ["Real-time tracking of campaign performance", 
+                 "Identify what works and optimize continuously", 
+                 "Transparent reporting with actionable insights"]
+    },
+    {
+      icon: Zap,
+      title: "Cost-Effective Campaigns",
+      // description: "Custom animations that bring your ideas to life",
+      features: ["Maximize ROI with smart budget allocation", 
+                 "Focus on high-performing channels", 
+                 "Optimize spend through continuous testing"]
+    }
+  ];
+
+
+  const kreya = [
+    {
+      title: "Strategic Approach",
+      description: "We combine your business goals with the latest industry trends to build smart, results-driven campaigns that make an impact.",
+      thumbnail: video_image,
+    },
+    {
+      title: "Customized Solutions",
+      description: "No two businesses are the same. Our strategies are tailored to match your audience, objectives, and budget for maximum effectiveness.",
+      thumbnail: video_image,
+    },
+    {
+      title: "Clear Reporting",
+      description: "Stay informed with regular updates and easy-to-understand insights that help you track progress and fine-tune performance confidently.",
+      thumbnail: video_image,
+    },
+        {
+      title: "Dedicated Support",
+      description: "From planning to execution, our expert team works closely with you to ensure smooth delivery and ongoing success.",
+      thumbnail: video_image,
     }
   ];
 
@@ -51,6 +92,33 @@ const DigitalMarketing = () => {
     { metric: "300%", description: "Social Engagement Boost" },
     { metric: "180%", description: "Conversion Rate Improvement" }
   ];
+
+  const img_sect = [
+    {
+      title: "Target with ",
+      title_col: "Precision",
+      description: "Leverage advanced targeting tools to reach the right people based on location, interests, behavior, and demographics—maximizing your marketing efficiency and relevance.",
+      thumbnail: video_image,
+    },
+    {
+      title: "Increase ",
+      title_col: "Brand Visibility",
+      description: "Digital marketing enhances your presence across search engines, social media, and online platforms—ensuring your brand is seen, remembered, and trusted by more people.",
+      thumbnail: video_image,
+    },
+    {
+      title: "Engage Across ",
+      title_col: "Channels",
+      description: "Deliver consistent and interactive experiences across multiple touchpoints—from Google to Instagram—keeping your audience engaged and connected with your brand.",
+      thumbnail: video_image,
+    },
+    {
+      title: "Measure What ",
+      title_col: "Matters",
+      description: "Real-time analytics let you monitor campaigns, optimize performance, and make data-driven decisions—ensuring every marketing rupee works harder for your business.",
+      thumbnail: video_image,
+    }
+  ]
 
   return (
     <div className="min-h-screen">
@@ -84,15 +152,70 @@ const DigitalMarketing = () => {
       </section>
 
       {/* Services Grid */}
-      <section className="py-24 bg-background">
-        <div className="container mx-auto px-6">
-          <div className={`text-center mb-16 fade-up ${sectionsVisible ? 'visible' : ''}`}>
-            <h2 className="text-4xl font-bold mb-4">Digital Marketing Services</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Comprehensive digital marketing solutions designed to drive growth and maximize ROI.
-            </p>
-          </div>
 
+      {/* Our Video Services Grid */}
+      <section className="px-24 pt-24 bg-background">
+        <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div>
+            <p className="text-lg font-bold">Bring Your Brand Story to Life</p>
+            <h2 className="text-4xl font-bold pb-4">Digital <span className="gradient-text">Marketing</span> Services</h2>
+            <p className="text-lg text-muted-foreground indent-8">
+              At Kreya Branding, we help businesses grow through smart, creative, and data-driven digital marketing strategies. We understand that every brand is unique, which is why we tailor our approach to meet your specific goals—whether that’s building awareness, attracting new customers, or driving sales. Our team combines insight, innovation, and the latest tools to deliver real, measurable results.            </p>
+            <p className="text-lg text-muted-foreground indent-8">
+              From SEO and social media marketing to paid advertising, content creation, and email campaigns, we offer a full spectrum of digital marketing services designed to elevate your brand. We don’t just focus on clicks and impressions—we focus on creating meaningful engagement that converts. With a deep understanding of audience behavior and digital trends, we ensure your brand stands out in a competitive online space.            </p>
+            <p className="text-lg text-muted-foreground indent-8">
+              Whether you're launching a new product or scaling an existing business, Kreya Branding provides the strategic support and execution you need to grow faster, smarter, and stronger in the digital landscape.            </p>
+          </div>
+          <div>
+            <img
+              src={video_image}
+              alt="Our Video Services"
+              className="w-full h-100 object-cover group-hover:scale-110 transition-transform duration-500"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* image content section */}
+      {img_sect.map((simg, index) => (
+      <section className="px-24 pt-24 bg-background">
+        <div className="container mx-auto grid grid-cols-1 md:grid-cols-5 gap-8">
+          {index % 2 !== 0 ? (
+          <>
+            <div className="md:col-span-3">
+              <h2 className="text-4xl font-bold">{simg.title}<span className="gradient-text">{simg.title_col}</span></h2>
+              <p className="text-lg text-muted-foreground">{simg.description}</p>
+            </div>
+            <div className="md:col-span-2">
+              <img
+                src={simg.thumbnail}
+                alt="Our Video Services"
+                className="w-full h-100 object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+            </div>
+          </>
+          ) : (
+          <>
+            <div className="md:col-span-2">
+              <img
+                src={simg.thumbnail}
+                alt="Our Video Services"
+                className="w-full h-100 object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+            </div>
+            <div className="md:col-span-3">
+              <h2 className="text-4xl font-bold">{simg.title} <span className="gradient-text">{simg.title_col}</span></h2>
+              <p className="text-lg text-muted-foreground">{simg.description}</p>
+            </div>
+          </>
+          )}
+        </div>
+      </section>
+      ))}
+
+      {/*Card Section*/}
+     <section className="py-24 bg-background">
+          <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {services.map((service, index) => (
               <div
@@ -106,8 +229,8 @@ const DigitalMarketing = () => {
                   </div>
                   <h3 className="text-2xl font-bold">{service.title}</h3>
                 </div>
-                <p className="text-muted-foreground mb-6">{service.description}</p>
-                <ul className="space-y-2">
+                {/* <p className="text-muted-foreground mb-6">{service.description}</p> */}
+                <ul className="space-y-2 mx-1">
                   {service.features.map((feature, idx) => (
                     <li key={idx} className="flex items-center text-sm text-muted-foreground">
                       <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
@@ -120,6 +243,40 @@ const DigitalMarketing = () => {
           </div>
         </div>
       </section>
+
+
+     {/* why chose kreya */}
+
+      <section className="pb-24">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4">Why Chose Kreya?</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Our professional services help businesses strengthen their brand identity and strategy.
+            </p>
+          </div>
+
+          {/* Grid for the boxes */}
+          <div className="grid md:grid-cols-2 gap-8">  
+            {kreya.map((kbox, index) => (
+            <div className="section-dark p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow flex items-center space-x-6">
+              <div className="flex-shrink-0">
+                <img 
+                  src={kbox.thumbnail} 
+                  alt="Our Video Services"
+                  className="w-[80px] h-[80px] object-contain"
+                />
+              </div>  
+              <div>
+                <h3 className="text-xl font-bold text-white">{kbox.title}</h3>
+                <p className="text-gray-400 mt-2">{kbox.description}</p>
+              </div>
+            </div>
+            ))}
+          </div>
+        </div>
+      </section>
+     {/* why chose kreya ends*/}
 
       {/* Results Section */}
       <section className="py-24 section-dark">
