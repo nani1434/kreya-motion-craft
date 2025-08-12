@@ -4,6 +4,9 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import video_image from "../../images/Video_services.jpeg";
+import creative_edge from "../../images/Icons/CREATIVE_EDGE.svg"
+import concept_development from "../../images/Icons/CONCEPT_DEVELOPMENT.svg"
+
 
 const VideoProduction = () => {
   const [heroVisible, setHeroVisible] = useState(false);
@@ -87,7 +90,8 @@ const VideoProduction = () => {
     {
       title: "Creative Edge",
       description: "At Kreya, we combine innovative ideas with strong storytelling to create videos that captivate and connect with your audience.",
-      thumbnail: video_image,
+      thumbnail: creative_edge 
+,
     },
     {
       title: "Top-Tier Quality",
@@ -108,9 +112,9 @@ const VideoProduction = () => {
 
   const img_sect = [
     {
-      title: "Creative ",
-      title_col: "Edge",
-      description: "At Kreya, we combine innovative ideas with strong storytelling to create videos that captivate and connect with your audience.",
+      title: "Boosts",
+      title_col: " Engagement",
+      description: "Videos naturally invite interaction. Whether it’s likes, comments, or shares, video content generates more engagement across platforms—helping your brand reach wider audiences and build stronger connections with viewers.",
       thumbnail: video_image,
     },
     {
