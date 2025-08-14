@@ -177,8 +177,8 @@ const VideoProduction = () => {
       <section className="px-24 pt-24 bg-background">
         <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
-            <p className="text-lg font-bold">Bring Your Brand Story to Life</p>
-            <h2 className="text-4xl font-bold pb-4">Our <span className="gradient-text">Video</span> Services</h2>
+            {/* <p className="text-lg font-bold">Bring Your Brand Story to Life</p> */}
+            <h2 className="text-4xl font-bold pb-4">Video <span className="gradient-text">Production</span> Services</h2>
             <p className="text-lg text-muted-foreground indent-8">
               At Kreya Branding, we turn your ideas into impactful visual stories through expert video production. Whether it’s a product showcase, corporate video, brand film, or social media content, we bring your vision to life with high-quality visuals, clear messaging, and purpose-driven storytelling.
             </p>
@@ -196,11 +196,16 @@ const VideoProduction = () => {
         </div>
       </section>
 
-
       {/* image content section */}
+      <section className="pt-24 bg-background">
+        <div className="container mx-auto px-6">
+          <div className="text-center">
+            <h2 className="text-4xl font-bold mb-4">Why <span className="gradient-text">Video Matters </span>for Your Brand</h2>
+          </div>
+        </div>
+
       {img_sect.map((simg, index) => (
-      <section className="px-24 pt-24 bg-background">
-        <div className="container mx-auto grid grid-cols-1 md:grid-cols-5 gap-8">
+        <div className="px-24 pt-24 bg-background container mx-auto grid grid-cols-1 md:grid-cols-5 gap-8">
           {index % 2 !== 0 ? (
           <>
             <div className="md:col-span-3">
@@ -231,9 +236,11 @@ const VideoProduction = () => {
           </>
           )}
         </div>
-      </section>
       ))}
+      </section>
+      {/* ---image content Section ends---*/}
 
+      {/* Services Section */}
       <section className="py-24 bg-background">
           <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
