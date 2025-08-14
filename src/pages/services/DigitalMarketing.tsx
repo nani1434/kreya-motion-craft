@@ -4,6 +4,19 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import video_image from "../../images/Video_services.jpeg";
+import dm_1 from "../../images/digitalmarketing/dm_1.png"
+import target from "../../images/digitalmarketing/TargetwithPrecision.png"
+import incres from "../../images/digitalmarketing/increasebrandvisbility.png"
+import enage from "../../images/digitalmarketing/engageacrosschannels.png"
+import measure from "../../images/digitalmarketing/measurewhatmatters.png"
+import approch from "../../images/icons/strategi_ approch.svg"
+import soultions from "../../images/icons/customized_solution.svg"
+import reporting from "../../images/icons/clear_reporting.svg"
+import support from "../../images/icons/Dedicated_Support.svg"
+
+
+
+
 
 const DigitalMarketing = () => {
   const [heroVisible, setHeroVisible] = useState(false);
@@ -67,22 +80,22 @@ const DigitalMarketing = () => {
     {
       title: "Strategic Approach",
       description: "We combine your business goals with the latest industry trends to build smart, results-driven campaigns that make an impact.",
-      thumbnail: video_image,
+      thumbnail: approch,
     },
     {
       title: "Customized Solutions",
       description: "No two businesses are the same. Our strategies are tailored to match your audience, objectives, and budget for maximum effectiveness.",
-      thumbnail: video_image,
+      thumbnail: soultions,
     },
     {
       title: "Clear Reporting",
       description: "Stay informed with regular updates and easy-to-understand insights that help you track progress and fine-tune performance confidently.",
-      thumbnail: video_image,
+      thumbnail: reporting,
     },
         {
       title: "Dedicated Support",
       description: "From planning to execution, our expert team works closely with you to ensure smooth delivery and ongoing success.",
-      thumbnail: video_image,
+      thumbnail: support,
     }
   ];
 
@@ -98,25 +111,25 @@ const DigitalMarketing = () => {
       title: "Target with ",
       title_col: "Precision",
       description: "Leverage advanced targeting tools to reach the right people based on location, interests, behavior, and demographics—maximizing your marketing efficiency and relevance.",
-      thumbnail: video_image,
+      thumbnail: target,
     },
     {
       title: "Increase ",
       title_col: "Brand Visibility",
       description: "Digital marketing enhances your presence across search engines, social media, and online platforms—ensuring your brand is seen, remembered, and trusted by more people.",
-      thumbnail: video_image,
+      thumbnail: incres,
     },
     {
       title: "Engage Across ",
       title_col: "Channels",
       description: "Deliver consistent and interactive experiences across multiple touchpoints—from Google to Instagram—keeping your audience engaged and connected with your brand.",
-      thumbnail: video_image,
+      thumbnail: enage,
     },
     {
       title: "Measure What ",
       title_col: "Matters",
       description: "Real-time analytics let you monitor campaigns, optimize performance, and make data-driven decisions—ensuring every marketing rupee works harder for your business.",
-      thumbnail: video_image,
+      thumbnail: measure,
     }
   ]
 
@@ -141,11 +154,8 @@ const DigitalMarketing = () => {
             </p>
             <div className={`flex flex-col sm:flex-row gap-4 justify-center fade-up ${heroVisible ? 'visible' : ''}`}
                  style={{ transitionDelay: '400ms' }}>
-              <Button className="btn-hero">Start Growing Today</Button>
-              <Button variant="outline" className="btn-outline-hero">
-                <TrendingUp className="w-4 h-4 mr-2" />
-                View Case Studies
-              </Button>
+              <Button className="btn-hero">Get Started</Button>
+              
             </div>
           </div>
         </div>
@@ -168,7 +178,7 @@ const DigitalMarketing = () => {
           </div>
           <div>
             <img
-              src={video_image}
+              src={dm_1}
               alt="Our Video Services"
               className="w-full h-100 object-cover group-hover:scale-110 transition-transform duration-500"
             />

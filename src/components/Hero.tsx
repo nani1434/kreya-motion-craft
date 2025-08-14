@@ -105,12 +105,9 @@ const Hero = () => {
         </div>
 
         <div className={`flex flex-col sm:flex-row gap-6 justify-center items-center fade-up ${isVisible ? 'visible' : ''}`} style={{ transitionDelay: '500ms' }}>
-          <Button className="btn-hero group flex items-center gap-3 text-lg px-10 py-6 hover:scale-105 transition-all duration-300 magnetic-btn">
-            <Play className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
-            Watch Our Reel
-          </Button>
+          
           <Button className="btn-outline-hero text-lg px-10 py-6 hover:scale-105 transition-all duration-300 magnetic-btn">
-            Start Your Project
+            Get started
           </Button>
         </div>
 

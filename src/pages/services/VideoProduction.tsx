@@ -6,6 +6,14 @@ import { Button } from "@/components/ui/button";
 import video_image from "../../images/Video_services.jpeg";
 import creative_edge from "../../images/Icons/CREATIVE_EDGE.svg"
 import concept_development from "../../images/Icons/CONCEPT_DEVELOPMENT.svg"
+import video_production from "../../images/videoproduction/Video_Production.png"
+import boost_engagemnt from "../../images/videoproduction/boosts_engagement.png"
+import improves_cover from "../../images/videoproduction/Improves_Conversion.png"
+import seo from "../../images/videoproduction/seof.png"
+import strength from "../../images/videoproduction/strengthensidentity.png"
+import collbor from "../../images/icons/COLLATERAL_DESIGN.svg"
+import top from "../../images/icons/TOPTIER_QUALITY.svg"
+import results from "../../images/icons/RESULTS_DRIVEN.svg"
 
 
 const VideoProduction = () => {
@@ -96,17 +104,17 @@ const VideoProduction = () => {
     {
       title: "Top-Tier Quality",
       description: "From sharp visuals to crisp audio and seamless editing, we use the best tools and talent to deliver high-quality production every time.",
-      thumbnail: video_image,
+      thumbnail: collbor,
     },
     {
       title: "Collaborative Process",
       description: "Your vision matters. We work closely with you at every step — from initial brief to the final cut — ensuring the outcome reflects your goals.",
-      thumbnail: video_image,
+      thumbnail: top,
     },
         {
       title: "Results-Driven",
       description: "Our videos don’t just look great — they’re built to deliver real results, from boosting engagement to driving conversions.",
-      thumbnail: video_image,
+      thumbnail: results,
     }
   ];
 
@@ -115,25 +123,25 @@ const VideoProduction = () => {
       title: "Boosts",
       title_col: " Engagement",
       description: "Videos naturally invite interaction. Whether it’s likes, comments, or shares, video content generates more engagement across platforms—helping your brand reach wider audiences and build stronger connections with viewers.",
-      thumbnail: video_image,
+      thumbnail: boost_engagemnt,
     },
     {
-      title: "Top-Tier ",
-      title_col: "Quality",
-      description: "From sharp visuals to crisp audio and seamless editing, we use the best tools and talent to deliver high-quality production every time.",
-      thumbnail: video_image,
+      title: "Improves",
+      title_col: " Conversion",
+      description: "Video has a proven impact on business performance. From product demos to customer testimonials, compelling video content can influence buying decisions, drive more inquiries, and increase conversion rates significantly.",
+      thumbnail: improves_cover,
     },
     {
-      title: "Collaborative ",
-      title_col: "Process",
-      description: "Your vision matters. We work closely with you at every step — from initial brief to the final cut — ensuring the outcome reflects your goals.",
-      thumbnail: video_image,
+      title: "SEO",
+      title_col: " Friendly",
+      description: "Search engines prioritize video-rich websites. Adding video not only improves your site's engagement metrics like time-on-page, but also increases the chance of ranking higher in search results, bringing more organic traffic.",
+      thumbnail: seo,
     },
         {
-      title: "Results-",
-      title_col: "Driven",
-      description: "Our videos don’t just look great — they’re built to deliver real results, from boosting engagement to driving conversions.",
-      thumbnail: video_image,
+      title: "Strengthens",
+      title_col: "Identity",
+      description: "Well-crafted video content tells a story—your brand story. These narratives create emotional impact and are easier to remember, helping your brand stay top-of-mind long after the video ends.",
+      thumbnail: strength,
     }
   ]
 
@@ -158,11 +166,8 @@ const VideoProduction = () => {
             </p>
             <div className={`flex flex-col sm:flex-row gap-4 justify-center fade-up ${heroVisible ? 'visible' : ''}`}
                  style={{ transitionDelay: '400ms' }}>
-              <Button className="btn-hero">Start Your Project</Button>
-              <Button variant="outline" className="btn-outline-hero">
-                <Play className="w-4 h-4 mr-2" />
-                View Our Reel
-              </Button>
+              <Button className="btn-hero">Get Started</Button>
+              
             </div>
           </div>
         </div>
@@ -183,7 +188,7 @@ const VideoProduction = () => {
           </div>
           <div>
             <img
-              src={video_image}
+              src={video_production}
               alt="Our Video Services"
               className="w-full h-100 object-cover group-hover:scale-110 transition-transform duration-500"
             />

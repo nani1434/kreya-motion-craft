@@ -4,6 +4,15 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import video_image from "../../images/Video_services.jpeg";
+import web_2 from "../../images/website/web_2.png"
+import make from "../../images/website/MakeaBoldFirstImpression.png"
+import design from "../../images/website/DesignforEveryDevice.png"
+import enhance from "../../images/website/EnhanceUserExperience.png"
+import lay from "../../images/website/Lay a ScalableDigitalFoundation.png"
+import builts from "../../images/icons/Custom_BuiltSolutions.svg"
+import speed from "../../images/icons/Speed_Performance.svg"
+import goal from "../../images/icons/Goal_OrientedDesign.svg"
+import service from "../../images/icons/Full_ServiceSupport.svg"
 
 
 const WebDevelopment = () => {
@@ -67,22 +76,22 @@ const WebDevelopment = () => {
     {
       title: "Custom-Built Solutions",
       description: "We don’t use cookie-cutter templates — your website is designed specifically for your brand and goals.",
-      thumbnail: video_image,
+      thumbnail: builts,
     },
     {
       title: "Speed & Performance",
       description: "We build websites that are fast, secure, and optimized for performance from day one.",
-      thumbnail: video_image,
+      thumbnail: speed,
     },
     {
       title: "Goal-Oriented Design",
       description: "Every feature and layout is built to support your objectives — from lead generation to sales.",
-      thumbnail: video_image,
+      thumbnail:  goal,
     },
         {
       title: "Full-Service Support",
       description: "From planning to launch and beyond, our team is with you at every step of the web journey.",
-      thumbnail: video_image,
+      thumbnail: service,
     }
   ];
 
@@ -91,25 +100,25 @@ const WebDevelopment = () => {
       title: "Make a Bold ",
       title_col: "First Impression",
       description: "Your website is often the first touchpoint. A clean, modern design helps build trust and instantly reflects your brand’s professionalism.",
-      thumbnail: video_image,
+      thumbnail: make,
     },
     {
       title: "Design for Every ",
       title_col: "Device",
       description: "With users browsing across phones, tablets, and desktops, a responsive site ensures seamless experiences—no matter the screen size.",
-      thumbnail: video_image,
+      thumbnail: design,
     },
     {
       title: "Enhance ",
       title_col: "User Experience",
       description: "Smooth navigation, fast load times, and intuitive layouts keep users engaged longer and increase the likelihood they’ll take action.",
-      thumbnail: video_image,
+      thumbnail: enhance,
     },
     {
       title: "Lay a Scalable ",
       title_col: "Digital Foundation",
       description: "Your website becomes the hub of your digital efforts—ready to scale with your business, support campaigns, and drive long-term growth.",
-      thumbnail: video_image,
+      thumbnail: lay,
     }
   ]
 
@@ -139,11 +148,8 @@ const WebDevelopment = () => {
             </p>
             <div className={`flex flex-col sm:flex-row gap-4 justify-center fade-up ${heroVisible ? 'visible' : ''}`}
                  style={{ transitionDelay: '400ms' }}>
-              <Button className="btn-hero">Start Your Project</Button>
-              <Button variant="outline" className="btn-outline-hero">
-                <Zap className="w-4 h-4 mr-2" />
-                View Our Work
-              </Button>
+              <Button className="btn-hero">Get Started</Button>
+              
             </div>
           </div>
         </div>
@@ -166,7 +172,7 @@ const WebDevelopment = () => {
           </div>
           <div>
             <img
-              src={video_image}
+              src={web_2}
               alt="Our Video Services"
               className="w-full h-100 object-cover group-hover:scale-110 transition-transform duration-500"
             />

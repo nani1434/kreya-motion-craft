@@ -4,6 +4,15 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import video_image from "../../images/Video_services.jpeg";
+import branding from "../../images/branding/branding.jpg"
+import trust from "../../images/branding/trust.png"
+import standout from "../../images/branding/STANDOUT.png"
+import loyalty from "../../images/branding/loyalty.png"
+import value from "../../images/branding/VALUE.png"
+import startegic from "../../images/icons/STRATEGIC_THINKING.svg"
+import distinct from "../../images/icons/DISTINCTVISUAL_IDENTITY.svg"
+import clear from "../../images/icons/CLEAR_BRAN MESSAGING.svg"
+import complete from "../../images/icons/COMPLETE_BRANDINGSUPPORT.svg"
 
 const BrandIdentity = () => {
   const [heroVisible, setHeroVisible] = useState(false);
@@ -94,22 +103,22 @@ const BrandIdentity = () => {
     {
       title: "Strategic Thinking",
       description: "At Kreya, we begin every brand identity project with a clear strategy. We take the time to understand your business, goals, and audience to ensure your brand is rooted in purpose and built to grow.",
-      thumbnail: video_image,
+      thumbnail: startegic,
     },
     {
       title: "Distinct Visual Identity",
       description: "We create visuals that not only look good but leave a lasting impression. From logos to color palettes and typography, every element is carefully designed to make your brand stand out.",
-      thumbnail: video_image,
+      thumbnail: distinct,
     },
     {
       title: "Clear Brand Messaging",
       description: "Your brand’s voice matters. We help you define how your brand sounds and communicates, so your message connects with your audience clearly and consistently across all platforms.",
-      thumbnail: video_image,
+      thumbnail: clear,
     },
         {
       title: "Complete Branding Support",
       description: "From the first idea to the final rollout, we offer full support. Whether you need brand guidelines, packaging, or digital branding, we ensure everything works together to tell your story effectively.",
-      thumbnail: video_image,
+      thumbnail: complete,
     }
   ];
 
@@ -118,25 +127,25 @@ const BrandIdentity = () => {
       title: "Stand ",
       title_col: "Out",
       description: "In today’s saturated market, consumers are bombarded with countless choices. A strong brand identity helps you cut through the noise and be instantly recognizable. By establishing a clear voice, tone, and visual style, your brand can create a distinct presence that not only captures attention but also stays top-of-mind with your audience.",
-      thumbnail: video_image,
+      thumbnail: standout,
     },
     {
       title: "Build",
       title_col: "Trust",
-      description: "From sharp visuals to crisp audio and seamless editing, we use the best tools and talent to deliver high-quality production every time.",
-      thumbnail: video_image,
+      description: "Trust is the foundation of any successful customer relationship. When your branding is consistent across every platform—website, social media, packaging, and beyond—it signals professionalism and reliability. Customers are more likely to engage with and purchase from a brand that appears stable, cohesive, and dependable.",
+      thumbnail: trust,
     },
     {
       title: "Inspire ",
       title_col: "Loyalty",
       description: "Great brands don’t just sell products—they build relationships. When your brand reflects values, emotions, or aspirations your audience relates to, it creates a deeper connection. This emotional resonance fosters loyalty, encouraging customers to return, recommend, and advocate for your brand over time.",
-      thumbnail: video_image,
+      thumbnail: loyalty,
     },
         {
       title: "Show Your ",
       title_col: "Value",
       description: "Your brand should clearly articulate what makes you different—and better. Whether it’s innovation, quality, service, or experience, your brand must highlight the unique value you bring to the table. Strong branding ensures this message is consistently communicated, helping customers understand why they should choose you over competitors.",
-      thumbnail: video_image,
+      thumbnail: value,
     }
   ]
 
@@ -161,11 +170,8 @@ const BrandIdentity = () => {
             </p>
             <div className={`flex flex-col sm:flex-row gap-4 justify-center fade-up ${heroVisible ? 'visible' : ''}`}
                  style={{ transitionDelay: '400ms' }}>
-              <Button className="btn-hero">Start Your Brand Journey</Button>
-              <Button variant="outline" className="btn-outline-hero">
-                <Layout className="w-4 h-4 mr-2" />
-                View Portfolio
-              </Button>
+              <Button className="btn-hero">Get Started</Button>
+             
             </div>
           </div>
         </div>
@@ -185,7 +191,7 @@ const BrandIdentity = () => {
           </div>
           <div>
             <img
-              src={video_image}
+              src={branding}
               alt="Our Video Services"
               className="w-full h-100 object-cover group-hover:scale-110 transition-transform duration-500"
             />
