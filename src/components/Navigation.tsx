@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import kreya_logo from "../../src/images/kreya_brand.jpeg"
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -54,7 +55,7 @@ const Navigation = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <img 
-              src={isScrolled ? "/logo-dark.png" : "/logo-light.png"} 
+              src={kreya_logo}
               alt="KREYA" 
               className="h-8 transition-opacity duration-300"
             />

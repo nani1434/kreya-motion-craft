@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { Instagram, Linkedin, Twitter, Mail, Phone, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import kreya_logo from "../../src/images/kreya_brand.jpeg"
+
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -61,9 +63,13 @@ const Footer = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
             {/* Brand Column */}
             <div className="lg:col-span-2">
-              <Link to="/" className="text-3xl font-bold text-white mb-6 block">
-                KREYA
-              </Link>
+                <Link to="/" className="flex items-center">
+                  <img 
+                    src={kreya_logo}
+                    alt="KREYA" 
+                    className="h-8 transition-opacity duration-300"
+                  />
+          </Link>
               <p className="text-gray-300 mb-6 text-lg leading-relaxed">
                 We create powerful brand experiences that captivate audiences and drive results
                 through cinematic storytelling and strategic marketing.
