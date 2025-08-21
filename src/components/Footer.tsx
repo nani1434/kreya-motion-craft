@@ -37,7 +37,7 @@ const Footer = () => {
     <footer className="section-dark">
       <div className="container mx-auto px-6">
         {/* Newsletter Section */}
-        <div className="py-16 border-b border-white/10">
+        {/* <div className="py-16 border-b border-white/10">
           <div className="max-w-4xl mx-auto text-center">
             <h3 className="text-4xl font-bold mb-4 text-white">
               Stay Updated with <span className="gradient-text">Kreya</span>
@@ -56,7 +56,7 @@ const Footer = () => {
               </Button>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Main Footer Content */}
         <div className="py-16">
@@ -79,15 +79,17 @@ const Footer = () => {
               <div className="space-y-3 mb-8">
                 <div className="flex items-center gap-3 text-gray-300">
                   <Mail className="w-5 h-5 text-primary" />
-                  <span>hello@kreya.agency</span>
+                  <span>info@kreyabranding.com</span>
                 </div>
                 <div className="flex items-center gap-3 text-gray-300">
                   <Phone className="w-5 h-5 text-primary" />
-                  <span>+1 (555) 123-4567</span>
+                  <span>+91 8121360119</span>
                 </div>
                 <div className="flex items-center gap-3 text-gray-300">
-                  <MapPin className="w-5 h-5 text-primary" />
-                  <span>Los Angeles, CA</span>
+                  <MapPin className="w-10 h-5 text-primary -mt-12" />
+                  <span>Plot No 102, 1st Floor, Vision Ultima Building, Plot No 60 of Jayabheri Enclave,
+Land Mark Behind The Platina mall,
+Gachibowli, Hyderabad, Telangana 500032</span>
                 </div>
               </div>
 

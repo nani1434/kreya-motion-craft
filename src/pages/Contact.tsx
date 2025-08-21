@@ -34,19 +34,19 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email Us",
-      content: "hello@kreya.agency",
+      content: "info@kreyabranding.com",
       subtitle: "We'll respond within 24 hours"
     },
     {
       icon: Phone,
       title: "Call Us",
-      content: "+1 (555) 123-4567",
+      content: "+91 81213 60119",
       subtitle: "Mon-Fri 9AM-6PM PST"
     },
     {
       icon: MapPin,
       title: "Visit Us",
-      content: "Los Angeles, CA",
+      content: "Hyderabad, Telangana",
       subtitle: "Schedule an in-person meeting"
     }
   ];

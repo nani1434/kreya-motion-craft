@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Palette, Pen, Layout, Package, Eye, FileText } from "lucide-react";
 import Navigation from "@/components/Navigation";
+import { useNavigate } from "react-router-dom";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import video_image from "../../images/Video_services.jpeg";
@@ -15,6 +16,7 @@ import clear from "../../images/icons/CLEAR_BRAN MESSAGING.svg"
 import complete from "../../images/icons/COMPLETE_BRANDINGSUPPORT.svg"
 
 const BrandIdentity = () => {
+  const navigate = useNavigate();
   const [heroVisible, setHeroVisible] = useState(false);
   const [sectionsVisible, setSectionsVisible] = useState(false);
 
@@ -61,14 +63,14 @@ const BrandIdentity = () => {
                  "Create packaging that reflects your brand identity", 
                  "Ensure consistency across all printed and digital materials"]
     },
-    {
-      icon: FileText,
-      title: "Digital Branding",
-      // description: "Custom animations that bring your ideas to life",
-      features: ["Design engaging and responsive websites", 
-                 "Create branded content for social platforms", 
-                 "Enhance digital presence through cohesive design and messaging"]
-    }
+    // {
+    //   icon: FileText,
+    //   title: "Digital Branding",
+    //   // description: "Custom animations that bring your ideas to life",
+    //   features: ["Design engaging and responsive websites", 
+    //              "Create branded content for social platforms", 
+    //              "Enhance digital presence through cohesive design and messaging"]
+    // }
   ];
 
   const process = [
@@ -130,7 +132,7 @@ const BrandIdentity = () => {
       thumbnail: standout,
     },
     {
-      title: "Build",
+      title: "Build ",
       title_col: "Trust",
       description: "Trust is the foundation of any successful customer relationship. When your branding is consistent across every platform—website, social media, packaging, and beyond—it signals professionalism and reliability. Customers are more likely to engage with and purchase from a brand that appears stable, cohesive, and dependable.",
       thumbnail: trust,
@@ -170,7 +172,7 @@ const BrandIdentity = () => {
             </p>
             <div className={`flex flex-col sm:flex-row gap-4 justify-center fade-up ${heroVisible ? 'visible' : ''}`}
                  style={{ transitionDelay: '400ms' }}>
-              <Button className="btn-hero">Get Started</Button>
+              <Button className="btn-hero"  onClick={() => navigate("/About")}>Get Started</Button>
              
             </div>
           </div>
@@ -181,7 +183,7 @@ const BrandIdentity = () => {
       <section className="px-24 pt-24 bg-background">
         <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
-            <p className="text-lg font-bold">Bring Your Brand Story to Life</p>
+            {/* <p className="text-lg font-bold">Bring Your Brand Story to Life</p> */}
             <h2 className="text-4xl font-bold pb-4"> <span className="gradient-text">Brand</span> Identity</h2>
             <p className="text-lg text-muted-foreground indent-8">
               At Kreya Branding, we believe that a brand is more than just a logo or a color palette — it’s the essence of a business and the way it connects with its audience. We work closely with businesses to craft meaningful brand strategies that define their voice, values, and unique positioning in the market. Our goal is to build brands that are not only visually striking but also rooted in purpose and clarity. </p>
@@ -200,12 +202,23 @@ const BrandIdentity = () => {
       </section>
 
       {/* image content section */}
+      <section className="pt-24 bg-background">
+        <div className="container mx-auto px-6">
+          <div className="text-center">
+            <h2 className="text-4xl font-bold mb-12">Why <span className="gradient-text">Branding </span>Matters</h2>
+          </div>
+        </div>
       {img_sect.map((simg, index) => (
-      <section className="px-24 pt-24 bg-background">
-        <div className="container mx-auto grid grid-cols-1 md:grid-cols-5 gap-8">
-          {index % 2 !== 0 ? (
+        <div
+          key={index}
+          className={`${
+            index === 0 ? "px-24 bg-background container mx-auto grid grid-cols-1 md:grid-cols-5 gap-8" 
+                        : "px-24 pt-24 bg-background container mx-auto grid grid-cols-1 md:grid-cols-5 gap-8"
+          }`}
+        >          
+        {index % 2 !== 0 ? (
           <>
-            <div className="md:col-span-3">
+            <div className="md:col-span-3 flex flex-col justify-center h-full">
               <h2 className="text-4xl font-bold">{simg.title}<span className="gradient-text">{simg.title_col}</span></h2>
               <p className="text-lg text-muted-foreground">{simg.description}</p>
             </div>
@@ -226,18 +239,22 @@ const BrandIdentity = () => {
                 className="w-full h-100 object-cover group-hover:scale-110 transition-transform duration-500"
               />
             </div>
-            <div className="md:col-span-3">
+            <div className="md:col-span-3 flex flex-col justify-center h-full">
               <h2 className="text-4xl font-bold">{simg.title} <span className="gradient-text">{simg.title_col}</span></h2>
               <p className="text-lg text-muted-foreground">{simg.description}</p>
             </div>
           </>
           )}
         </div>
-      </section>
       ))}
+      </section>
+
 
       <section className="py-24 bg-background">
-          <div className="container mx-auto px-6">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-8">
+            <h2 className="text-4xl font-bold">Our <span className="gradient-text">Core Branding</span> Services</h2>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {services.map((service, index) => (
               <div
@@ -272,7 +289,7 @@ const BrandIdentity = () => {
       <section className="pb-24">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Why Chose Kreya?</h2>
+            <h2 className="text-4xl font-bold mb-4">Why Chose <span className="gradient-text">Kreya?</span></h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Our professional services help businesses strengthen their brand identity and strategy.
             </p>
@@ -301,7 +318,7 @@ const BrandIdentity = () => {
      {/* why chose kreya ends*/}
 
       {/* Process Section */}
-      <section className="py-24 section-dark">
+      {/* <section className="py-24 section-dark">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4 text-white">Our Design Process</h2>
@@ -322,10 +339,10 @@ const BrandIdentity = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Portfolio Preview */}
-      <section className="py-24 bg-background">
+      {/* <section className="py-24 bg-background">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">Recent Brand Work</h2>
@@ -346,10 +363,10 @@ const BrandIdentity = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
-      <section className="py-24 section-dark">
+      {/* <section className="py-24 section-dark">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-4xl font-bold mb-6 text-white">
             Ready to Build Your <span className="gradient-text">Brand Identity</span>?
@@ -359,7 +376,7 @@ const BrandIdentity = () => {
           </p>
           <Button className="btn-hero">Start Your Brand Project</Button>
         </div>
-      </section>
+      </section> */}
 
       <Footer />
     </div>

@@ -1,8 +1,12 @@
 import { useEffect, useState } from "react";
 import { Play, ArrowDown, Sparkles, Zap, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
+import hero_banner from "../../src/images/hero_banner.png";
+
 
 const Hero = () => {
+  const navigate = useNavigate();
   const [isVisible, setIsVisible] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [flyingElements, setFlyingElements] = useState<Array<{id: number, x: number, y: number, delay: number}>>([]);
@@ -51,20 +55,21 @@ const Hero = () => {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Dynamic Background */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-900/90 via-gray-800/80 to-gray-900/90 z-10"></div>
-        <div 
-          className="w-full h-full bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 bg-cover bg-center transition-transform duration-700 ease-out"
-          style={{
-            transform: `translate(${mousePosition.x * 10}px, ${mousePosition.y * 10}px) scale(1.05)`,
-          }}
-        ></div>
+        {/* <div className="absolute inset-0 bg-gradient-to-br from-gray-900/90 via-gray-800/80 to-gray-900/90 z-10"></div> */}
+        <div className="absolute inset-0 bg-gradient-to-br z-10"></div>
+
+        <div
+  className="w-full h-full bg-cover bg-center transition-transform duration-500"
+  style={{ backgroundImage: "url('src/images/hero_banner.png')" }}
+>
+</div>
         
         {/* Animated gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-transparent to-secondary/20 animate-pulse"></div>
       </div>
 
       {/* Flying Elements */}
-      <div className="absolute inset-0 z-10 pointer-events-none">
+      {/* <div className="absolute inset-0 z-10 pointer-events-none">
         {flyingElements.map((element) => {
           const icons = [Sparkles, Zap, Star];
           const IconComponent = icons[element.id % icons.length];
@@ -83,7 +88,7 @@ const Hero = () => {
             </div>
           );
         })}
-      </div>
+      </div> */}
 
       {/* Content */}
       <div className="relative z-20 text-center text-white px-6 max-w-6xl mx-auto">
@@ -106,7 +111,8 @@ const Hero = () => {
 
         <div className={`flex flex-col sm:flex-row gap-6 justify-center items-center fade-up ${isVisible ? 'visible' : ''}`} style={{ transitionDelay: '500ms' }}>
           
-          <Button className="btn-outline-hero text-lg px-10 py-6 hover:scale-105 transition-all duration-300 magnetic-btn">
+          <Button className="btn-outline-hero text-lg px-10 py-6 hover:scale-105 transition-all duration-300 magnetic-btn"
+            onClick={() => navigate("/About")}>
             Get started
           </Button>
         </div>

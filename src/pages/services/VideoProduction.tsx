@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Video, Play, Camera, Film, Monitor, Palette } from "lucide-react";
 import Navigation from "@/components/Navigation";
+import { useNavigate } from "react-router-dom";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import video_image from "../../images/Video_services.jpeg";
@@ -17,6 +18,7 @@ import results from "../../images/icons/RESULTS_DRIVEN.svg"
 
 
 const VideoProduction = () => {
+  const navigate = useNavigate();
   const [heroVisible, setHeroVisible] = useState(false);
   const [sectionsVisible, setSectionsVisible] = useState(false);
 
@@ -63,14 +65,14 @@ const VideoProduction = () => {
                  "Add motion graphics, animation, and sound design", 
                  "Polish the final cut into a compelling visual story"]
     },
-    {
-      icon: Palette,
-      title: "Promotional & Social Videos",
-      // description: "Custom animations that bring your ideas to life",
-      features: ["Create content tailored for digital platforms", 
-                 "Format and optimize for YouTube, Instagram, LinkedIn & more", 
-                 "Drive engagement through shareable, platform-specific videos"]
-    }
+    // {
+    //   icon: Palette,
+    //   title: "Promotional & Social Videos",
+    //   // description: "Custom animations that bring your ideas to life",
+    //   features: ["Create content tailored for digital platforms", 
+    //              "Format and optimize for YouTube, Instagram, LinkedIn & more", 
+    //              "Drive engagement through shareable, platform-specific videos"]
+    // }
   ];
 
   const portfolio = [
@@ -139,7 +141,7 @@ const VideoProduction = () => {
     },
         {
       title: "Strengthens",
-      title_col: "Identity",
+      title_col: " Identity",
       description: "Well-crafted video content tells a story—your brand story. These narratives create emotional impact and are easier to remember, helping your brand stay top-of-mind long after the video ends.",
       thumbnail: strength,
     }
@@ -166,7 +168,7 @@ const VideoProduction = () => {
             </p>
             <div className={`flex flex-col sm:flex-row gap-4 justify-center fade-up ${heroVisible ? 'visible' : ''}`}
                  style={{ transitionDelay: '400ms' }}>
-              <Button className="btn-hero">Get Started</Button>
+              <Button className="btn-hero"  onClick={() => navigate("/About")}>Get Started</Button>
               
             </div>
           </div>
@@ -200,15 +202,21 @@ const VideoProduction = () => {
       <section className="pt-24 bg-background">
         <div className="container mx-auto px-6">
           <div className="text-center">
-            <h2 className="text-4xl font-bold mb-4">Why <span className="gradient-text">Video Matters </span>for Your Brand</h2>
+            <h2 className="text-4xl font-bold mb-12">Why <span className="gradient-text">Video Matters </span>for Your Brand</h2>
           </div>
         </div>
 
       {img_sect.map((simg, index) => (
-        <div className="px-24 pt-24 bg-background container mx-auto grid grid-cols-1 md:grid-cols-5 gap-8">
-          {index % 2 !== 0 ? (
+        <div
+          key={index}
+          className={`${
+            index === 0 ? "px-24 bg-background container mx-auto grid grid-cols-1 md:grid-cols-5 gap-8" 
+                        : "px-24 pt-24 bg-background container mx-auto grid grid-cols-1 md:grid-cols-5 gap-8"
+          }`}
+        >
+        {index % 2 !== 0 ? (
           <>
-            <div className="md:col-span-3">
+            <div className="md:col-span-3 flex flex-col justify-center h-full">
               <h2 className="text-4xl font-bold">{simg.title}<span className="gradient-text">{simg.title_col}</span></h2>
               <p className="text-lg text-muted-foreground">{simg.description}</p>
             </div>
@@ -229,7 +237,7 @@ const VideoProduction = () => {
                 className="w-full h-100 object-cover group-hover:scale-110 transition-transform duration-500"
               />
             </div>
-            <div className="md:col-span-3">
+            <div className="md:col-span-3 flex flex-col justify-center h-full">
               <h2 className="text-4xl font-bold">{simg.title} <span className="gradient-text">{simg.title_col}</span></h2>
               <p className="text-lg text-muted-foreground">{simg.description}</p>
             </div>
@@ -242,7 +250,10 @@ const VideoProduction = () => {
 
       {/* Services Section */}
       <section className="py-24 bg-background">
-          <div className="container mx-auto px-6">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-8">
+            <h2 className="text-4xl font-bold">Our <span className="gradient-text">Video</span> Services</h2>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {services.map((service, index) => (
               <div
@@ -279,7 +290,7 @@ const VideoProduction = () => {
       <section className="pb-24">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Why Chose Kreya?</h2>
+            <h2 className="text-4xl font-bold mb-4">Why Chose <span className="gradient-text">Kreya?</span></h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Our professional services help businesses strengthen their brand identity and strategy.
             </p>
@@ -307,7 +318,7 @@ const VideoProduction = () => {
       </section>
 
 
-      {/* Portfolio Section */}
+      {/* Portfolio Section
       <section className="py-24 section-dark">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
@@ -341,9 +352,9 @@ const VideoProduction = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
-      {/* CTA Section */}
+      {/* CTA Section
       <section className="py-24 bg-background">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-4xl font-bold mb-6">
@@ -354,7 +365,7 @@ const VideoProduction = () => {
           </p>
           <Button className="btn-hero">Get Started Today</Button>
         </div>
-      </section>
+      </section> */}
 
       <Footer />
     </div>

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Code, Smartphone, Globe, Zap, Shield, Rocket } from "lucide-react";
 import Navigation from "@/components/Navigation";
+import { useNavigate } from "react-router-dom";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import video_image from "../../images/Video_services.jpeg";
@@ -16,6 +17,7 @@ import service from "../../images/icons/Full_ServiceSupport.svg"
 
 
 const WebDevelopment = () => {
+  const navigate = useNavigate();  
   const [heroVisible, setHeroVisible] = useState(false);
   const [sectionsVisible, setSectionsVisible] = useState(false);
 
@@ -62,14 +64,14 @@ const WebDevelopment = () => {
                  "Fast-loading pages for improved user retention", 
                  "Clean code structure for long-term performance"]
     },
-    {
-      icon: Shield,
-      title: "Scalable Digital Foundation",
-      // description: "Custom animations that bring your ideas to life",
-      features: ["Future-ready platforms that grow with your business", 
-                 "Easy integration with tools and marketing platforms", 
-                 "Built to support ongoing campaigns and traffic"]
-    }
+    // {
+    //   icon: Shield,
+    //   title: "Scalable Digital Foundation",
+    //   // description: "Custom animations that bring your ideas to life",
+    //   features: ["Future-ready platforms that grow with your business", 
+    //              "Easy integration with tools and marketing platforms", 
+    //              "Built to support ongoing campaigns and traffic"]
+    // }
   ];
 
     const kreya = [
@@ -148,7 +150,7 @@ const WebDevelopment = () => {
             </p>
             <div className={`flex flex-col sm:flex-row gap-4 justify-center fade-up ${heroVisible ? 'visible' : ''}`}
                  style={{ transitionDelay: '400ms' }}>
-              <Button className="btn-hero">Get Started</Button>
+              <Button className="btn-hero"  onClick={() => navigate("/About")}>Get Started</Button>
               
             </div>
           </div>
@@ -160,7 +162,7 @@ const WebDevelopment = () => {
       <section className="px-24 pt-24 bg-background">
         <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
-            <p className="text-lg font-bold">Bring Your Brand Story to Life</p>
+            {/* <p className="text-lg font-bold">Bring Your Brand Story to Life</p> */}
             <h2 className="text-4xl font-bold pb-4">Web <span className="gradient-text">Development </span> Services</h2>
             <p className="text-lg text-muted-foreground indent-8">
               At Kreya Branding, we craft custom, high-performing websites built to align with your business goals. Whether you're a growing startup or an established brand, we design digital experiences that are not only visually engaging but also strategically built to drive conversions. Every element we create is focused on functionality, speed, and user experience.
@@ -181,12 +183,23 @@ const WebDevelopment = () => {
       </section>
 
       {/* image content section */}
+     <section className="pt-24 bg-background">
+        <div className="container mx-auto px-6">
+          <div className="text-center">
+            <h2 className="text-4xl font-bold mb-12">Why <span className="gradient-text">Web Development </span>Matters</h2>
+          </div>
+        </div>
       {img_sect.map((simg, index) => (
-      <section className="px-24 pt-24 bg-background">
-        <div className="container mx-auto grid grid-cols-1 md:grid-cols-5 gap-8">
-          {index % 2 !== 0 ? (
+        <div
+          key={index}
+          className={`${
+            index === 0 ? "px-24 bg-background container mx-auto grid grid-cols-1 md:grid-cols-5 gap-8" 
+                        : "px-24 pt-24 bg-background container mx-auto grid grid-cols-1 md:grid-cols-5 gap-8"
+          }`}
+        >          
+        {index % 2 !== 0 ? (
           <>
-            <div className="md:col-span-3">
+            <div className="md:col-span-3 flex flex-col justify-center h-full">
               <h2 className="text-4xl font-bold">{simg.title}<span className="gradient-text">{simg.title_col}</span></h2>
               <p className="text-lg text-muted-foreground">{simg.description}</p>
             </div>
@@ -207,19 +220,23 @@ const WebDevelopment = () => {
                 className="w-full h-100 object-cover group-hover:scale-110 transition-transform duration-500"
               />
             </div>
-            <div className="md:col-span-3">
+            <div className="md:col-span-3 flex flex-col justify-center h-full">
               <h2 className="text-4xl font-bold">{simg.title} <span className="gradient-text">{simg.title_col}</span></h2>
               <p className="text-lg text-muted-foreground">{simg.description}</p>
             </div>
           </>
           )}
         </div>
-      </section>
       ))}
+      </section>
+
 
       {/*Card Section*/}
      <section className="py-24 bg-background">
-          <div className="container mx-auto px-6">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-8">
+            <h2 className="text-4xl font-bold">Our <span className="gradient-text">Web development</span> Services</h2>
+          </div>          
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {services.map((service, index) => (
               <div
@@ -254,7 +271,7 @@ const WebDevelopment = () => {
       <section className="pb-24">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Why Chose Kreya?</h2>
+            <h2 className="text-4xl font-bold mb-4">Why Chose <span className="gradient-text">Kreya?</span></h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Our professional services help businesses strengthen their brand identity and strategy.
             </p>
@@ -283,7 +300,7 @@ const WebDevelopment = () => {
      {/* why chose kreya ends*/}
 
       {/* Technologies Section */}
-      <section className="py-24 section-dark">
+      {/* <section className="py-24 section-dark">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4 text-white">Technologies We Use</h2>
@@ -303,10 +320,10 @@ const WebDevelopment = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
-      <section className="py-24 bg-background">
+      {/* <section className="py-24 bg-background">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-4xl font-bold mb-6">
             Ready to Build Something <span className="gradient-text">Amazing</span>?
@@ -316,7 +333,7 @@ const WebDevelopment = () => {
           </p>
           <Button className="btn-hero">Get Your Free Consultation</Button>
         </div>
-      </section>
+      </section> */}
 
       <Footer />
     </div>
