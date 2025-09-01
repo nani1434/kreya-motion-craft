@@ -134,6 +134,8 @@ const About = () => {
         </div>
       </section>
 
+      
+
       {/* Story Section */}
       <StorySection />
 

@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import cormondel from "../../src/images/clients/cormondel_pic.png"
 
 const ClientsSection = () => {
   const [visible, setVisible] = useState(false);
@@ -23,9 +24,9 @@ const ClientsSection = () => {
 
   const clients = [
     {
-      name: "TechStart Inc.",
-      logo: "https://via.placeholder.com/200x80/e55729/ffffff?text=TechStart",
-      category: "Technology"
+      name: "coromandel",
+      logo: "cormondel_pic.png",
+      category: "coromandel"
     },
     {
       name: "GlobalRetail",

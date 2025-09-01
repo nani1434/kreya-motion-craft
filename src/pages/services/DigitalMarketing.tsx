@@ -112,25 +112,25 @@ const DigitalMarketing = () => {
     {
       title: "Target with ",
       title_col: "Precision",
-      description: "Leverage advanced targeting tools to reach the right people based on location, interests, behavior, and demographics—maximizing your marketing efficiency and relevance.",
+      description: "Digital marketing enables laser-focused audience targeting. Using advanced tools and analytics, you can reach the right people based on demographics, interests, online behaviors, and even geographic location. This precision ensures your campaigns are not wasted on irrelevant audiences, boosting both efficiency and relevance while delivering stronger ROI.",
       thumbnail: target,
     },
     {
       title: "Increase ",
       title_col: "Brand Visibility",
-      description: "Digital marketing enhances your presence across search engines, social media, and online platforms—ensuring your brand is seen, remembered, and trusted by more people.",
+      description: "In today’s digital-first world, visibility equals credibility. By leveraging search engines, social media, and online platforms, digital marketing ensures your brand is consistently present where your audience spends their time. This not only increases awareness but also helps your brand become recognizable, memorable, and trusted in a crowded marketplace.",
       thumbnail: incres,
     },
     {
       title: "Engage Across ",
       title_col: "Channels",
-      description: "Deliver consistent and interactive experiences across multiple touchpoints—from Google to Instagram—keeping your audience engaged and connected with your brand.",
+      description: "Your audience doesn’t live on a single platform, and neither should your brand. Digital marketing allows you to deliver consistent, engaging experiences across multiple channels—whether it’s search, display ads, social platforms, or email. This omnichannel presence keeps your audience connected and nurtures stronger brand relationships.",
       thumbnail: enage,
     },
     {
       title: "Measure What ",
       title_col: "Matters",
-      description: "Real-time analytics let you monitor campaigns, optimize performance, and make data-driven decisions—ensuring every marketing rupee works harder for your business.",
+      description: "Unlike traditional marketing, digital campaigns provide measurable results in real time. From clicks and impressions to conversions and ROI, analytics let you track performance, uncover insights, and optimize strategies. This data-driven approach ensures every marketing rupee works harder, maximizing impact and minimizing waste.",
       thumbnail: measure,
     }
   ]

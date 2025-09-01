@@ -124,25 +124,25 @@ const VideoProduction = () => {
     {
       title: "Boosts",
       title_col: " Engagement",
-      description: "Videos naturally invite interaction. Whether it’s likes, comments, or shares, video content generates more engagement across platforms—helping your brand reach wider audiences and build stronger connections with viewers.",
+      description: "Video is one of the most powerful tools for capturing attention and sparking interaction. Unlike static content, videos invite viewers to like, comment, share, and engage, creating conversations around your brand. This higher level of interaction expands your reach across platforms and strengthens the bond with your audience, transforming passive viewers into active participants.",
       thumbnail: boost_engagemnt,
     },
     {
       title: "Improves",
       title_col: " Conversion",
-      description: "Video has a proven impact on business performance. From product demos to customer testimonials, compelling video content can influence buying decisions, drive more inquiries, and increase conversion rates significantly.",
+      description: "Beyond engagement, video drives results. Product demos showcase features in action, tutorials build confidence, and customer testimonials provide social proof — all of which influence buying decisions. Compelling video content guides prospects along the customer journey, answering questions and overcoming objections, ultimately boosting inquiries and significantly increasing conversion rates.",
       thumbnail: improves_cover,
     },
     {
       title: "SEO",
       title_col: " Friendly",
-      description: "Search engines prioritize video-rich websites. Adding video not only improves your site's engagement metrics like time-on-page, but also increases the chance of ranking higher in search results, bringing more organic traffic.",
+      description: "Search engines love video. Websites enriched with video content enjoy longer visitor sessions, improved engagement metrics, and a greater chance of appearing higher in search results. Adding video to your site not only helps attract more organic traffic but also signals credibility and relevance to both search engines and users, making it a powerful driver of visibility and growth.",
       thumbnail: seo,
     },
         {
       title: "Strengthens",
       title_col: " Identity",
-      description: "Well-crafted video content tells a story—your brand story. These narratives create emotional impact and are easier to remember, helping your brand stay top-of-mind long after the video ends.",
+      description: "Videos allow brands to tell stories in ways text and images cannot. Through visuals, sound, and narrative, video creates an emotional connection that is memorable and impactful. A well-crafted video conveys your brand’s purpose, values, and personality, ensuring you stay top-of-mind long after the video ends. This storytelling power strengthens your identity, making your brand more relatable and trusted.",
       thumbnail: strength,
     }
   ]

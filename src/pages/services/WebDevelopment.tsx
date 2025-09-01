@@ -101,25 +101,25 @@ const WebDevelopment = () => {
     {
       title: "Make a Bold ",
       title_col: "First Impression",
-      description: "Your website is often the first touchpoint. A clean, modern design helps build trust and instantly reflects your brand’s professionalism.",
+      description: "Your website is often the very first interaction someone has with your brand. A clean, modern design not only captures attention but also builds instant trust. It signals professionalism, credibility, and a commitment to quality—setting the tone for the entire customer journey.",
       thumbnail: make,
     },
     {
       title: "Design for Every ",
       title_col: "Device",
-      description: "With users browsing across phones, tablets, and desktops, a responsive site ensures seamless experiences—no matter the screen size.",
+      description: "Today’s users move seamlessly between phones, tablets, and desktops. A fully responsive website ensures they enjoy a consistent, high-quality experience regardless of screen size. This adaptability improves accessibility, reduces drop-offs, and demonstrates that your brand values user convenience.",
       thumbnail: design,
     },
     {
       title: "Enhance ",
       title_col: "User Experience",
-      description: "Smooth navigation, fast load times, and intuitive layouts keep users engaged longer and increase the likelihood they’ll take action.",
+      description: "A well-structured website does more than look good—it works effortlessly. Smooth navigation, intuitive layouts, and fast load times reduce frustration and keep visitors engaged longer. A positive user experience increases the likelihood of conversions, whether that’s a sign-up, a purchase, or an inquiry.",
       thumbnail: enhance,
     },
     {
       title: "Lay a Scalable ",
       title_col: "Digital Foundation",
-      description: "Your website becomes the hub of your digital efforts—ready to scale with your business, support campaigns, and drive long-term growth.",
+      description: "Your website isn’t just an online presence—it’s the central hub of your digital ecosystem. When built with scalability in mind, it can evolve alongside your business, supporting new campaigns, integrations, and growth opportunities. A strong foundation today ensures sustainable digital success tomorrow.",
       thumbnail: lay,
     }
   ]
