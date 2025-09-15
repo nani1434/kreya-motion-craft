@@ -193,6 +193,7 @@ const BrandIdentity = () => {
           </div>
           <div>
             <img
+              style={{ borderRadius: '20px'}}
               src={branding}
               alt="Our Video Services"
               className="w-full h-100 object-cover group-hover:scale-110 transition-transform duration-500"
@@ -224,6 +225,7 @@ const BrandIdentity = () => {
             </div>
             <div className="md:col-span-2">
               <img
+                style={{ borderRadius: '20px'}}
                 src={simg.thumbnail}
                 alt="Our Video Services"
                 className="w-full h-100 object-cover group-hover:scale-110 transition-transform duration-500"
@@ -234,6 +236,7 @@ const BrandIdentity = () => {
           <>
             <div className="md:col-span-2">
               <img
+                style={{ borderRadius: '20px'}}
                 src={simg.thumbnail}
                 alt="Our Video Services"
                 className="w-full h-100 object-cover group-hover:scale-110 transition-transform duration-500"
@@ -300,7 +303,7 @@ const BrandIdentity = () => {
             {kreya.map((kbox, index) => (
             <div className="section-dark p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow flex items-center space-x-6">
               <div className="flex-shrink-0">
-                <img 
+                <img
                   src={kbox.thumbnail} 
                   alt="Our Video Services"
                   className="w-[80px] h-[80px] object-contain"

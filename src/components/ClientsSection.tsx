@@ -25,12 +25,12 @@ const ClientsSection = () => {
   const clients = [
     {
       name: "coromandel",
-      logo: "cormondel_pic.png",
+      logo: cormondel,
       category: "coromandel"
     },
     {
       name: "GlobalRetail",
-      logo: "https://via.placeholder.com/200x80/3e3d3d/ffffff?text=GlobalRetail",
+      logo: cormondel,
       category: "Retail"
     },
     {

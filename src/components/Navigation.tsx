@@ -28,7 +28,7 @@ const Navigation = () => {
   const navItems = [
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
-    { name: "Projects", path: "/projects" },
+    // { name: "Projects", path: "/projects" },
     { name: "Blog", path: "/blog" },
     { name: "Contact", path: "/contact" },
   ];
@@ -89,6 +89,7 @@ const Navigation = () => {
                     } ${
                       location.pathname.startsWith('/services') ? "text-primary" : ""
                     }`}
+                    style={{fontSize: '16px'}}
                   >
                     Services
                   </NavigationMenuTrigger>

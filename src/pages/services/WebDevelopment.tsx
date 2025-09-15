@@ -174,6 +174,7 @@ const WebDevelopment = () => {
           </div>
           <div>
             <img
+              style={{ borderRadius: '20px'}}
               src={web_2}
               alt="Our Video Services"
               className="w-full h-100 object-cover group-hover:scale-110 transition-transform duration-500"
@@ -205,6 +206,7 @@ const WebDevelopment = () => {
             </div>
             <div className="md:col-span-2">
               <img
+                style={{ borderRadius: '20px'}}
                 src={simg.thumbnail}
                 alt="Our Video Services"
                 className="w-full h-100 object-cover group-hover:scale-110 transition-transform duration-500"
@@ -215,6 +217,7 @@ const WebDevelopment = () => {
           <>
             <div className="md:col-span-2">
               <img
+                style={{ borderRadius: '20px'}}
                 src={simg.thumbnail}
                 alt="Our Video Services"
                 className="w-full h-100 object-cover group-hover:scale-110 transition-transform duration-500"

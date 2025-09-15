@@ -192,7 +192,8 @@ const VideoProduction = () => {
             <img
               src={video_production}
               alt="Our Video Services"
-              className="w-full h-100 object-cover group-hover:scale-110 transition-transform duration-500"
+              className="w-full h-100 object-cover group-hover:scale-110 transition-transform duration-500" 
+              style={{ borderRadius: '20px'}}
             />
           </div>
         </div>
@@ -225,6 +226,7 @@ const VideoProduction = () => {
                 src={simg.thumbnail}
                 alt="Our Video Services"
                 className="w-full h-100 object-cover group-hover:scale-110 transition-transform duration-500"
+                style={{ borderRadius: '20px'}}
               />
             </div>
           </>
@@ -232,6 +234,7 @@ const VideoProduction = () => {
           <>
             <div className="md:col-span-2">
               <img
+                style={{ borderRadius: '20px'}}
                 src={simg.thumbnail}
                 alt="Our Video Services"
                 className="w-full h-100 object-cover group-hover:scale-110 transition-transform duration-500"
